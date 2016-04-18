@@ -1,0 +1,2 @@
+;; MediaWiki
+(require 'mediawiki)

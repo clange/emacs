@@ -1,0 +1,7 @@
+(setq viper-ESC-moves-cursor-back t)
+(setq viper-ex-style-editing nil)
+(setq viper-insert-state-cursor-color nil)
+(setq viper-insert-state-mode-list (quote (internal-ange-ftp-mode comint-mode gud-mode inferior-emacs-lisp-mode erc-mode eshell-mode shell-mode post-mode log-edit-mode)))
+(setq viper-suppress-input-method-change-message t)
+(setq viper-vi-style-in-minibuffer nil)
+(setq viper-want-ctl-h-help t)

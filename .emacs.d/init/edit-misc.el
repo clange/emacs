@@ -1,0 +1,23 @@
+;; General
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq-default indent-tabs-mode nil)
+(minibuffer-electric-default-mode 1)
+
+(diminish 'visual-line-mode "")
+
+;; disabled functions
+(put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+
+(custom-set-variables
+  '(case-fold-search t)
+  '(current-language-environment "UTF-8")
+  '(kill-whole-line t)
+  '(mark-even-if-inactive t)
+  '(tab-always-indent 'complete)
+  '(transient-mark-mode t)
+  '(text-mode-hook '(turn-on-visual-line-mode text-mode-hook-identify))
+  '(word-wrap t))

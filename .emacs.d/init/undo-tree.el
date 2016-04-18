@@ -1,0 +1,1 @@
+(diminish 'undo-tree-mode "")

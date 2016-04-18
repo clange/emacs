@@ -1,0 +1,2 @@
+;; inflections
+(require 'inflections)
