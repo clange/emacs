@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: hallo 
+# key: hallo
+# --
+Hallo $1,
+
+$0
+
+Viele Grüße,
+
+Christoph
