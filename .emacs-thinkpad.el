@@ -51,6 +51,9 @@
 (load-file (expand-file-name "~/.emacs.d/init/evil-surround.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-org.el"))
 
+;; Numbers
+(load-file (expand-file-name "~/.emacs.d/init/operate-on-number.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/paredit.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/expand-region.el"))
