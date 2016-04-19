@@ -216,7 +216,7 @@
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
    (quote
-    (smartrep operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
+    (operate-on-number smartrep 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
  '(safe-local-variable-values
    (quote
     ((ispell-dictionary . british)

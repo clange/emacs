@@ -33,6 +33,7 @@
 				(magit-svn . "melpa-stable")
 				(makey . "melpa-stable")
 				(markdown-mode . "melpa-stable")
+				(operate-on-number . "melpa-stable")
 				(org . "melpa-stable")
 				(org2blog . "melpa-stable")
 				(powershell . "melpa-stable")
