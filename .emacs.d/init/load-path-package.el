@@ -23,6 +23,7 @@
 				(git-commit . "melpa-stable")
 				(git-timemachine . "melpa-stable")
 				(helm-ag . "melpa-stable")
+				(helm-org-rifle . "melpa-stable")
 				(hydra . "melpa-stable")
 				(inflections . "melpa-stable")
 				(langtool . "melpa-stable")
