@@ -151,6 +151,8 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/edit-misc.el"))
 
+;; Keys
+(load-file (expand-file-name "~/.emacs.d/init/which-key.el"))
 (load-file (expand-file-name "~/.emacs.d/init/special-keys.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/abbrev.el"))

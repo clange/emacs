@@ -41,6 +41,7 @@
 				(projectile . "melpa-stable")
 				(rdf-prefix . "melpa-stable")
 				(undo-tree . "melpa-stable")
+				(which-key . "melpa-stable")
 				(with-editor . "melpa-stable")
 				(writegood-mode . "melpa-stable")
 				(yasnippet . "melpa-stable")
