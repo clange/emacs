@@ -50,6 +50,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/evil-numbers.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-surround.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-org.el"))
+(load-file (expand-file-name "~/.emacs.d/init/evil-quickscope.el"))
 
 ;; Numbers
 (load-file (expand-file-name "~/.emacs.d/init/operate-on-number.el"))

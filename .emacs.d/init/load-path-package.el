@@ -15,6 +15,7 @@
 				(emmet-mode . "melpa-stable")
 				;; (evil-surround . "melpa-stable")
 				(evil-org . "melpa-stable")
+				(evil-quickscope . "melpa-stable")
 				(evil-numbers . "melpa-stable")
 				(evil-matchit . "melpa-stable")
 				(evil-leader . "melpa-stable")

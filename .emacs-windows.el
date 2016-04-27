@@ -61,6 +61,8 @@
 (load-file (expand-file-name "~/.emacs.d/init/evil-numbers.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-surround.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-org.el"))
+(load-file (expand-file-name "~/.emacs.d/init/evil-quickscope.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
 
 ;; Numbers
@@ -218,7 +220,7 @@
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
    (quote
-    (which-key helm-org-rifle operate-on-number smartrep 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
+    (evil-quickscope which-key helm-org-rifle operate-on-number smartrep 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
  '(safe-local-variable-values
    (quote
     ((ispell-dictionary . british)
