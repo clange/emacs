@@ -62,12 +62,13 @@ Let the current time interval be A--C.  By default, this function interactively 
 
 (defun clange/org-agenda-switch-to-ts (prefix)
   (interactive "P")
-  (if ;; with the following alternative org-clock-convenience-goto-ts will be
-      ;; invoked from everywhere in a log line, not just from the timestamp.
-      ;; (save-excursion
-      ;;   (beginning-of-line)
-      ;;   (looking-at org-clock-convenience-clocked-agenda-re)
-      (org-clock-convenience-at-timefield-p)
+  (if (and
+       (save-excursion
+         (beginning-of-line)
+         (looking-at org-clock-convenience-clocked-agenda-re))
+       ;; without the "and" and the following condition, the following alternative org-clock-convenience-goto-ts will be
+       ;; invoked from everywhere in a log line, not just from the timestamp.
+       (org-clock-convenience-at-timefield-p))
       (progn
         ;; This is necessary when one wants the function to work from
         ;; everywhere in a log line:
