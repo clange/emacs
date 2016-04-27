@@ -158,6 +158,8 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/abbrev.el"))
 
+(load-file (expand-file-name "~/.emacs.d/init/calculator.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/nxml.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/sgml.el"))
