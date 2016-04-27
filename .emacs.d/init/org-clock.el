@@ -60,22 +60,6 @@ Let the current time interval be A--C.  By default, this function interactively 
 
 (require 'org-clock-convenience)
 
-(defun clange/org-agenda-switch-to-ts (prefix)
-  (interactive "P")
-  (if (and
-       (save-excursion
-         (beginning-of-line)
-         (looking-at org-clock-convenience-clocked-agenda-re))
-       ;; without the "and" and the following condition, the following alternative org-clock-convenience-goto-ts will be
-       ;; invoked from everywhere in a log line, not just from the timestamp.
-       (org-clock-convenience-at-timefield-p))
-      (progn
-        ;; This is necessary when one wants the function to work from
-        ;; everywhere in a log line:
-        ;; (org-clock-convenience-goto-agenda-tr-field 'd1-time)
-        (call-interactively 'org-clock-convenience-goto-ts))
-    (org-agenda-switch-to prefix)))
-
 ;; https://github.com/dfeich/org-clock-convenience
 (defun dfeich/org-agenda-mode-fn ()
   (define-key org-agenda-mode-map
@@ -83,9 +67,7 @@ Let the current time interval be A--C.  By default, this function interactively 
   (define-key org-agenda-mode-map
     (kbd "<S-down>") #'org-clock-convenience-timestamp-down)
   (define-key org-agenda-mode-map
-    (kbd "–") #'org-clock-convenience-fill-gap)
-  (define-key org-agenda-mode-map
-    (kbd "RET") #'clange/org-agenda-switch-to-ts))
+    (kbd "–") #'org-clock-convenience-fill-gap))
 (add-hook 'org-agenda-mode-hook #'dfeich/org-agenda-mode-fn)
 
 (defun dfeich/helm-org-clock-in (marker)
@@ -97,6 +79,24 @@ Let the current time interval be A--C.  By default, this function interactively 
   '(nconc helm-org-headings-actions
           (list
            (cons "Clock into task" #'dfeich/helm-org-clock-in))))
+
+;; when jumping to the agenda from a log message, the point ends up at
+;; a CLOCK item in a LOGBOOK drawer, but the drawer gets closed, even
+;; if the drawer was open before. I add a drawer opening function to
+;; the respective agenda hook
+(defun dfeich/org-open-if-in-drawer ()
+  (let ((element (org-element-at-point)))
+    (while (and element
+        (not (memq (org-element-type element)
+               '(drawer property-drawer))))
+      (setq element (org-element-property :parent element)))
+    (when element
+      (let ((pos (point)))
+    (goto-char (org-element-property :begin element))
+    (org-flag-drawer nil)
+    (goto-char pos)))))
+
+(add-hook 'org-agenda-after-show-hook #'dfeich/org-open-if-in-drawer)
 
 (setq org-clock-history-length 35)
 (setq org-clock-idle-time 10)
