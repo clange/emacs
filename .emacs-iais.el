@@ -158,7 +158,9 @@
 (load-file (expand-file-name "~/.emacs.d/init/which-key.el"))
 (load-file (expand-file-name "~/.emacs.d/init/special-keys.el"))
 
+;; Completion
 (load-file (expand-file-name "~/.emacs.d/init/abbrev.el"))
+(load-file (expand-file-name "~/.emacs.d/init/company.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/calculator.el"))
 
