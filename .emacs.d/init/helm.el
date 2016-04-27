@@ -31,7 +31,7 @@
 (global-set-key (kbd "C-c h o") 'helm-occur)
 (global-set-key (kbd "C-c r") 'helm-mini)
 
-(eval-after-load "org"
+(with-eval-after-load "org"
   (require 'helm-org-rifle)
   (global-set-key (kbd "C-c o h") 'helm-org-agenda-files-headings))
 
