@@ -93,6 +93,7 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/org.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-babel.el"))
+(load-file (expand-file-name "~/.emacs.d/init/org-clock.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))

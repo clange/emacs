@@ -97,6 +97,7 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/org.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-babel.el"))
+(load-file (expand-file-name "~/.emacs.d/init/org-clock.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
@@ -222,7 +223,7 @@
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
    (quote
-    (evil-quickscope which-key helm-org-rifle operate-on-number smartrep 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
+    (org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number smartrep 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
  '(safe-local-variable-values
    (quote
     ((ispell-dictionary . british)
