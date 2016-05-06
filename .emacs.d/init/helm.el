@@ -35,6 +35,15 @@
   (require 'helm-org-rifle)
   (global-set-key (kbd "C-c o h") 'helm-org-agenda-files-headings))
 
+(autoload 'helm-bibtex "helm-bibtex" "" t)
+(setq bibtex-completion-bibliography '(
+                                       "~/git/github.com/EIS-Bonn/Papers/bib/all.bib"
+                                       "~/git/github.com/EIS-Bonn/Papers/bib/eis.bib"
+                                       "~/svn/codex.cs.bham.ac.uk/mmk/formare/lib/bibtex/formare.bib"
+                                       "~/svn/kwarc.info/kwarc/doc/bibs/kwarc.bib"
+                                       ))
+(global-set-key (kbd "C-c h [") 'helm-bibtex)
+
 (diminish 'helm-mode "H")
 
 (helm-mode 1)
