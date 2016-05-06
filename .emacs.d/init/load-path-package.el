@@ -28,6 +28,7 @@
 				(evil . "melpa-stable")
 				(git-commit . "melpa-stable")
 				(git-timemachine . "melpa-stable")
+				(google-this . "melpa-stable")
 				(helm-ag . "melpa-stable")
 				(helm-org-rifle . "melpa-stable")
 				(hydra . "melpa-stable")

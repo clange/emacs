@@ -101,6 +101,8 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/post.el"))
 
+(load-file (expand-file-name "~/.emacs.d/init/google-this.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/toolbox.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/hets.el"))
