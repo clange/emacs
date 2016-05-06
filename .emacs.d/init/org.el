@@ -11,6 +11,8 @@
   (global-set-key "\C-cL" 'org-insert-link-global)
   (global-set-key "\C-cO" 'org-open-at-point-global)
 
+  (global-set-key "\C-co^" #'(lambda () (interactive) (org-back-to-heading)))
+
   (setq org-return-follows-link t)
   
   (require 'org-id)
