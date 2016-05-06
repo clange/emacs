@@ -17,6 +17,7 @@
 				(dash . "melpa-stable")
 				(diminish . "melpa-stable")
 				(discover . "melpa-stable")
+				(ebib . "melpa-stable")
 				(emmet-mode . "melpa-stable")
 				;; (evil-surround . "melpa-stable")
 				(evil-org . "melpa-stable")
