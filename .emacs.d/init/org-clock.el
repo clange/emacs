@@ -58,27 +58,28 @@ Let the current time interval be A--C.  By default, this function interactively 
 
 (define-key org-mode-map (kbd "\C-cos") 'org-clock-split-current-interval)
 
-(require 'org-clock-convenience)
+(use-package org-clock-convenience
+  :init
+  (progn
+    ;; https://github.com/dfeich/org-clock-convenience
+    (defun dfeich/org-agenda-mode-fn ()
+      (define-key org-agenda-mode-map
+	(kbd "<S-up>") #'org-clock-convenience-timestamp-up)
+      (define-key org-agenda-mode-map
+	(kbd "<S-down>") #'org-clock-convenience-timestamp-down)
+      (define-key org-agenda-mode-map
+	(kbd "–") #'org-clock-convenience-fill-gap))
+    (add-hook 'org-agenda-mode-hook #'dfeich/org-agenda-mode-fn)
 
-;; https://github.com/dfeich/org-clock-convenience
-(defun dfeich/org-agenda-mode-fn ()
-  (define-key org-agenda-mode-map
-    (kbd "<S-up>") #'org-clock-convenience-timestamp-up)
-  (define-key org-agenda-mode-map
-    (kbd "<S-down>") #'org-clock-convenience-timestamp-down)
-  (define-key org-agenda-mode-map
-    (kbd "–") #'org-clock-convenience-fill-gap))
-(add-hook 'org-agenda-mode-hook #'dfeich/org-agenda-mode-fn)
-
-(defun dfeich/helm-org-clock-in (marker)
-  "Clock into the item at MARKER"
-  (with-current-buffer (marker-buffer marker)
-    (goto-char (marker-position marker))
-    (org-clock-in)))
-(eval-after-load 'helm-org
-  '(nconc helm-org-headings-actions
-          (list
-           (cons "Clock into task" #'dfeich/helm-org-clock-in))))
+    (defun dfeich/helm-org-clock-in (marker)
+      "Clock into the item at MARKER"
+      (with-current-buffer (marker-buffer marker)
+	(goto-char (marker-position marker))
+	(org-clock-in)))
+    (eval-after-load 'helm-org
+      '(nconc helm-org-headings-actions
+	      (list
+	       (cons "Clock into task" #'dfeich/helm-org-clock-in))))))
 
 ;; when jumping to the agenda from a log message, the point ends up at
 ;; a CLOCK item in a LOGBOOK drawer, but the drawer gets closed, even

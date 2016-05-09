@@ -25,8 +25,10 @@
 ;; (load-file (expand-file-name "~/.emacs.d/init/load-path-org-git.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/load-path-org2blog.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/load-path-package.el"))
+
+(eval-when-compile
+  (require 'use-package))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/package-scala.el"))
 

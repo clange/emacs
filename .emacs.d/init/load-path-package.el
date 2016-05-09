@@ -49,6 +49,7 @@
 				(projectile . "melpa-stable")
 				(rdf-prefix . "melpa-stable")
 				(smartrep . "melpa-stable")
+				(use-package . "melpa-stable")
 				(undo-tree . "melpa-stable")
 				(which-key . "melpa-stable")
 				(with-editor . "melpa-stable")
