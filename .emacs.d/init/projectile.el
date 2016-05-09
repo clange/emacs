@@ -1,4 +1,5 @@
 (projectile-global-mode)
 (setq projectile-indexing-method 'alien)
 (helm-projectile-on)
+(setq projectile-switch-project-action 'helm-projectile)
 (diminish 'projectile-mode "P")
