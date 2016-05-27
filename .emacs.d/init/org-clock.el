@@ -22,10 +22,10 @@ Let the current time interval be A--C.  By default, this function interactively 
   (save-excursion
     ;; Part of the following code is copied from org-clock-update-time-maybe.
     ;; If this function becomes part of org-clock.el, some refactoring would be in order.
-    (beginning-of-line nil)
+    (beginning-of-line)
     (skip-chars-forward " \t")
     (when (looking-at org-clock-string)
-      (beginning-of-line nil)
+      (beginning-of-line)
       (let ((re (concat "\\([ \t]*" org-clock-string " *\\)"
                         "\\([[<][^]>]+[]>]\\)\\(-+\\)\\([[<][^]>]+[]>]\\)"
                         "\\(?:[ \t]*=>.*\\)?")))
@@ -98,6 +98,31 @@ Let the current time interval be A--C.  By default, this function interactively 
     (goto-char pos)))))
 
 (add-hook 'org-agenda-after-show-hook #'dfeich/org-open-if-in-drawer)
+
+(defun org-clock-change-hh-mm (new)
+  "When on a CLOCK line, replace the two HH:MM stamps with new ones, entered as HH:MM-HH:MM"
+  (interactive "MNew timestamps (HH:MM-HH:MM): ")
+  (when (string-match "\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)-\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)" new)
+    ; As we keep HH:MM together there's no need to split them in this match, but we
+    ; do it nevertheless to be able to reuse org-ts-regexp1, which does the same.
+    (let ((from-hh (format "%02d" (string-to-number (match-string 1 new))))
+          (from-mm (match-string 2 new))
+          (to-hh (format "%02d" (string-to-number (match-string 3 new))))
+          (to-mm (match-string 4 new)))
+      (save-excursion
+        (beginning-of-line)
+        (skip-chars-forward " \t")
+        (when (looking-at org-clock-string)
+          (when (re-search-forward
+                 (concat "\\[" org-ts-regexp1 "\\]--\\[" org-ts-regexp1 "\\]")
+                 (line-end-position))
+            (replace-match from-hh nil t nil 7)
+            (replace-match from-mm nil t nil 8)
+            (replace-match to-hh nil t nil 15)
+            (replace-match to-mm nil t nil 16)
+            (org-clock-update-time-maybe)))))))
+
+(define-key org-mode-map (kbd "\C-co:") 'org-clock-change-hh-mm)
 
 (setq org-clock-history-length 35)
 (setq org-clock-idle-time 10)
