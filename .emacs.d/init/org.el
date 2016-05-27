@@ -130,5 +130,6 @@
   (setq org-refile-targets '((nil . (:level . 8))))
   (setq org-refile-use-outline-path t)
   (setq org-support-shift-select nil)
+  (setq org-tags-column -90)
   (setq org-use-speed-commands t)
 )
