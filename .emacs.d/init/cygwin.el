@@ -1,6 +1,9 @@
 ;; Windows Cygwin shell settings
+;; TODO consider using https://www.emacswiki.org/emacs/setup-cygwin.el
 (cond
  ((eq system-type 'windows-nt)
+  (require 'cygwin-mount)
+  (setenv "PATH" (concat "c:\\bin\\cygwin\\bin;" (getenv "PATH")))
   (add-hook 'comint-output-filter-functions
 	    'shell-strip-ctrl-m nil t)
   (add-hook 'comint-output-filter-functions
@@ -9,6 +12,8 @@
   ;; For subprocesses invoked via the shell
   ;; (e.g., "shell -c command")
   (setq shell-file-name explicit-shell-file-name)
+
+  ;; make sure we are not using CMD's FIND
 
   (add-to-list 'Info-directory-list
                (replace-regexp-in-string "\r?\n$" ""
