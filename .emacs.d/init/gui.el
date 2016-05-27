@@ -1,6 +1,6 @@
 (setq blink-cursor-mode nil)
 (setq column-number-mode t)
-(setq menu-bar-mode nil)
+(menu-bar-mode -1)
 (setq minibuffer-eldef-shorten-default t)
 (setq scroll-bar-mode t)
 (setq show-paren-mode t)
