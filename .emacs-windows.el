@@ -109,6 +109,8 @@
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-other.el"))
 
+(load-file (expand-file-name "~/.emacs.d/init/remember.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/charmap.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/auctex.el"))
