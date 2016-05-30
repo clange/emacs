@@ -106,6 +106,8 @@
   (setq org-capture-templates
         `(("c" "Contacts" entry (file ,my-org-contacts-file) "* %^{Name}%^{CUSTOM_ID}p
   %?")
+          ("j" "Journal" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* %?\nEntered on %U\n   %i\n   %a"
+           :prepend t)
           ("w" "Log work task" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* %^{Description}  %^g%?"
            :prepend t
            :clock-in t
