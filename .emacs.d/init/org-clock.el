@@ -101,7 +101,7 @@ Let the current time interval be A--C.  By default, this function interactively 
 
 (defun org-clock-change-hh-mm (new)
   "When on a CLOCK line, replace the two HH:MM stamps with new ones, entered as HH:MM-HH:MM"
-  (interactive "MNew timestamps (HH:MM-HH:MM): ")
+  (interactive "MNew timestamps on same days (HH:MM-HH:MM): ")
   (when (string-match "\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)-\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)" new)
     ; As we keep HH:MM together there's no need to split them in this match, but we
     ; do it nevertheless to be able to reuse org-ts-regexp1, which does the same.
