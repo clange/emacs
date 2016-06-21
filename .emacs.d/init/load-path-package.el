@@ -47,6 +47,7 @@
 				(operate-on-number . "melpa-stable")
 				(org . "melpa-stable")
 				(org2blog . "melpa-stable")
+				(pandoc . "melpa-stable")
 				(powershell . "melpa-stable")
 				(projectile . "melpa-stable")
 				(rdf-prefix . "melpa-stable")
