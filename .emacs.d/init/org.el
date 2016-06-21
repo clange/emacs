@@ -28,7 +28,9 @@
   ;; sort TODO's in agenda and todo view by keyword/state also (requires dash.el)
   (dolist (context '(agenda todo))
     (add-to-list 'org-agenda-sorting-strategy
-                 (let ((split (--partition-by-header (eq it 'priority-down)  (assoc context org-agenda-sorting-strategy))))
+                 (let ((split (--partition-by-header
+                               (eq it 'priority-down)
+                               (assoc context org-agenda-sorting-strategy))))
                    ;; keep the default values, but insert 'todo-state-down and 'effort-down just before 'priority-down
                    (-concat (car split) '(todo-state-down effort-down) (cadr split)))))
 
