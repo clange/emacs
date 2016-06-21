@@ -21,6 +21,18 @@
   (setq org-agenda-include-diary t)
   (setq org-agenda-start-on-weekday nil)
   (add-hook 'org-agenda-finalize-hook #'(lambda () (undo-tree-mode -1)))
+
+  ;; sort TODO's in agenda and todo view by keyword/state also (requires dash.el)
+  (dolist (context '(agenda todo))
+    (add-to-list 'org-agenda-sorting-strategy
+                 (let ((split (--partition-by-header (eq it 'priority-down)  (assoc context org-agenda-sorting-strategy))))
+                   ;; keep the default values, but insert 'todo-state-down and 'effort-down just before 'priority-down
+                   (-concat (car split) '(todo-state-down effort-down) (cadr split)))))
+
+  
+  (add-to-list 'org-agenda-sorting-strategy `(todo todo-state-up ,@(cdr (assoc 'todo org-agenda-sorting-strategy))))
+  (add-to-list 'org-agenda-sorting-strategy `(agenda todo-state-up ,@(cdr (assoc 'todo org-agenda-sorting-strategy))))
+  
   ;; Org appointments (http://doc.norang.ca/org-mode.html#Reminders)
                                         ; Erase all reminders and rebuilt reminders for today from the agenda
   (defun bh/org-agenda-to-appt ()
@@ -59,6 +71,7 @@
           ("MAYBE" . (:foreground "sea green"))
           ("DONE" . (:foreground "light sea green"))
           ("CANCELLED" . (:foreground "forest green"))
+          ("NEXT" . (:foreground "red" :weight bold))
           ("TASK" . (:foreground "blue"))))
   ;; keeping track of stuck projects:
   (setq org-tags-exclude-from-inheritance '("prj")
@@ -112,7 +125,10 @@
            :prepend t
            :clock-in t
            :clock-keep t)
-          ("t" "TODO" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* TODO %^{Description}
+         ("t" "TODO" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* TODO %^{Description}
+  DEADLINE: %^{DEADLINE}t"
+           :prepend t) 
+          ("T" "TODO (and clock in)" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* TODO %^{Description}
   DEADLINE: %^{DEADLINE}t"
            :prepend t
            :clock-in t
