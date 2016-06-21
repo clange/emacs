@@ -1,4 +1,6 @@
 ;; Org mode
+(require 'dash)
+
 (let ((my-org-default-file (expand-file-name "~/svn/kwarc.info/clange/org/default.org"))
       (my-org-contacts-file (expand-file-name "~/svn/kwarc.info/clange/org/contacts.org")))
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -22,6 +24,7 @@
   (setq org-agenda-start-on-weekday nil)
   (add-hook 'org-agenda-finalize-hook #'(lambda () (undo-tree-mode -1)))
 
+  (require 'org-agenda)
   ;; sort TODO's in agenda and todo view by keyword/state also (requires dash.el)
   (dolist (context '(agenda todo))
     (add-to-list 'org-agenda-sorting-strategy
@@ -29,10 +32,6 @@
                    ;; keep the default values, but insert 'todo-state-down and 'effort-down just before 'priority-down
                    (-concat (car split) '(todo-state-down effort-down) (cadr split)))))
 
-  
-  (add-to-list 'org-agenda-sorting-strategy `(todo todo-state-up ,@(cdr (assoc 'todo org-agenda-sorting-strategy))))
-  (add-to-list 'org-agenda-sorting-strategy `(agenda todo-state-up ,@(cdr (assoc 'todo org-agenda-sorting-strategy))))
-  
   ;; Org appointments (http://doc.norang.ca/org-mode.html#Reminders)
                                         ; Erase all reminders and rebuilt reminders for today from the agenda
   (defun bh/org-agenda-to-appt ()
