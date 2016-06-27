@@ -7,14 +7,37 @@
 (evil-mode 1)
 
 ;; modes
-(add-to-list 'evil-insert-state-modes 'log-edit-mode)
-(add-to-list 'evil-emacs-state-modes 'Buffer-menu-mode)
-;; TODO report as bug in evil-vars.el
-(add-to-list 'evil-emacs-state-modes 'reftex-select-label-mode)
-(add-to-list 'evil-emacs-state-modes 'org-mode)
-(add-to-list 'evil-emacs-state-modes 'makey-key-mode)
-(add-to-list 'evil-emacs-state-modes 'magit-popup-mode)
-(add-to-list 'evil-motion-state-modes 'diff-mode)
+(dolist (mode '(
+                Buffer-menu-mode
+                ag-mode
+                calculator-mode
+                flycheck-error-list-mode
+                git-rebase-mode
+                magit-popup-mode
+                makey-key-mode
+                org-mode
+                reftex-select-label-mode ;; TODO report as bug in evil-vars.el
+                ))
+  (add-to-list 'evil-emacs-state-modes mode))
+(dolist (mode '(
+                log-edit-mode
+                ))
+  (add-to-list 'evil-insert-state-modes mode))
+(dolist (mode '(
+                diff-mode
+                ))
+  (add-to-list 'evil-motion-state-modes mode))
+
+;; http://blog.aaronbieber.com/2016/01/23/living-in-evil.html
+(add-hook 'occur-mode-hook
+          (lambda ()
+            (evil-add-hjkl-bindings occur-mode-map 'emacs
+              (kbd "/")       'evil-search-forward
+              (kbd "n")       'evil-search-next
+              (kbd "N")       'evil-search-previous
+              ;; (kbd "C-d")     'evil-scroll-down
+              ;; (kbd "C-u")     'evil-scroll-up
+              (kbd "C-w C-w") 'other-window)))
 
 ;; key mappings
 
