@@ -1,8 +1,9 @@
 ;; Org mode
 (require 'dash)
 
-(let ((my-org-default-file (expand-file-name "~/svn/kwarc.info/clange/org/default.org"))
-      (my-org-contacts-file (expand-file-name "~/svn/kwarc.info/clange/org/contacts.org")))
+(let* ((my-org-directory (expand-file-name "~/svn/kwarc.info/clange/org/"))
+       (my-org-default-file (expand-file-name "default.org" my-org-directory))
+       (my-org-contacts-file (expand-file-name "contacts.org" my-org-directory)))
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
   (setq org-default-notes-file my-org-default-file)
 
