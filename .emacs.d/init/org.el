@@ -21,6 +21,7 @@
   (define-obsolete-function-alias 'fancy-diary-display
     'diary-fancy-display "23.1")
   (setq org-agenda-include-diary t)
+  (setq org-agenda-span 8)
   (setq org-agenda-start-on-weekday nil)
   (add-hook 'org-agenda-finalize-hook #'(lambda () (undo-tree-mode -1)))
 
