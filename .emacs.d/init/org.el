@@ -36,6 +36,18 @@
                    ;; keep the default values, but insert 'todo-state-down and 'effort-down just before 'priority-down
                    (-concat (car split) '(todo-state-down effort-down) (cadr split)))))
 
+  ;; force taking a note on state change even if this state is not set up for taking notes
+  ;; (http://emacs.stackexchange.com/a/97)
+  (defun org-todo-force-notes ()
+    (interactive)
+    (let ((org-todo-log-states
+           (mapcar (lambda (state)
+                     (list state 'note 'time))
+                   (apply 'append org-todo-sets))))
+      (call-interactively 'org-todo)))
+
+  (define-key org-mode-map (kbd "C-c M-t") 'org-todo-force-notes)
+
   ;; Org appointments (http://doc.norang.ca/org-mode.html#Reminders)
                                         ; Erase all reminders and rebuilt reminders for today from the agenda
   (defun bh/org-agenda-to-appt ()
