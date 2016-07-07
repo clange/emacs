@@ -109,6 +109,8 @@
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-other.el"))
 
+(load-file (expand-file-name "~/.emacs.d/init/yankpad.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/remember.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/charmap.el"))
@@ -234,10 +236,12 @@
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
    (quote
-    (pandoc general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company company-auctex company-math company-ngram company-statistics company-web smartrep org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
+    (yankpad pandoc general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company company-auctex company-math company-ngram company-statistics company-web smartrep org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
  '(safe-local-variable-values
    (quote
-    ((ispell-dictionary . british)
+    ((org-tags-exclude-from-inheritance quote
+                                        ("Project" "FIX" "Tentative" "NotBusy" "OtherPeople"))
+     (ispell-dictionary . british)
      (cache-long-scans)
      (org-export-babel-evaluate quote inline-only)
      (time-stamp-active . t)
