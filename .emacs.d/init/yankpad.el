@@ -1,4 +1,5 @@
 (use-package yankpad
-  :init
-  (define-key 'global-map (kbd "<f7>") #'yankpad-map)
+  :defer 10
+  :config
+  (bind-key "<f7>" 'yankpad-map)
   :ensure t)
