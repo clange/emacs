@@ -92,8 +92,6 @@
 ;; Trying to use Helm everywhere
 (load-file (expand-file-name "~/.emacs.d/init/helm.el"))
 
-(load-file (expand-file-name "~/.emacs.d/init/yasnippet.el"))
-
 ;; (load-file (expand-file-name "~/.emacs.d/init/format-region.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/epa-file.el"))
@@ -182,6 +180,7 @@
 ;; Completion
 (load-file (expand-file-name "~/.emacs.d/init/abbrev.el"))
 (load-file (expand-file-name "~/.emacs.d/init/company.el"))
+(load-file (expand-file-name "~/.emacs.d/init/yasnippet.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/calculator.el"))
 
@@ -240,6 +239,8 @@
  '(safe-local-variable-values
    (quote
     ((org-tags-exclude-from-inheritance quote
+                                        ("prj" "FIX" "Tentative" "NotBusy" "OtherPeople"))
+     (org-tags-exclude-from-inheritance quote
                                         ("Project" "FIX" "Tentative" "NotBusy" "OtherPeople"))
      (ispell-dictionary . british)
      (cache-long-scans)

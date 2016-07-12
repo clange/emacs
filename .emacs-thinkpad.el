@@ -74,8 +74,6 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/ido.el"))
 
-;; (load-file (expand-file-name "~/.emacs.d/init/yasnippet.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/format-region.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/epa-file.el"))
@@ -147,6 +145,7 @@
 ;; Completion
 (load-file (expand-file-name "~/.emacs.d/init/abbrev.el"))
 (load-file (expand-file-name "~/.emacs.d/init/company.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/yasnippet.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/calculator.el"))
 
