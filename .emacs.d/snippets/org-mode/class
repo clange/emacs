@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: org-class
+# key: class
+# note: Alternative for $3: $$(yas-choose-value "0" "1" "2" "3" "4" "5" "6")
+# --
+<%%(org-class ${1:`(format-time-string "%Y %m %d")`} ${2:`(format-time-string "%Y 12 31")`} ${3:`(format-time-string "%w")`}$0)>
