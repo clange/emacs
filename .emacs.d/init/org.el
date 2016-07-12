@@ -64,6 +64,15 @@
   (setq midnight-mode t)
   (add-hook 'midnight-hook 'bh/org-agenda-to-appt)
 
+  (eval-after-load "calendar"
+    '(progn
+       (org-defkey calendar-mode-map [?C]
+                   #'(lambda ()
+                       (interactive)
+                       (let ((org-agenda-span 'day))
+                         (org-calendar-goto-agenda))))))
+  
+
   (add-to-list 'org-agenda-custom-commands
         '("X" "One month from today"
            ((agenda ""))
