@@ -99,28 +99,82 @@ Let the current time interval be A--C.  By default, this function interactively 
 
 (add-hook 'org-agenda-after-show-hook #'dfeich/org-open-if-in-drawer)
 
-(defun org-clock-change-hh-mm (new)
-  "When on a CLOCK line, replace the two HH:MM stamps with new ones, entered as HH:MM-HH:MM"
-  (interactive "MNew timestamps on same days (HH:MM-HH:MM): ")
-  (when (string-match "\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)-\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)" new)
-    ; As we keep HH:MM together there's no need to split them in this match, but we
-    ; do it nevertheless to be able to reuse org-ts-regexp1, which does the same.
-    (let ((from-hh (format "%02d" (string-to-number (match-string 1 new))))
-          (from-mm (match-string 2 new))
-          (to-hh (format "%02d" (string-to-number (match-string 3 new))))
-          (to-mm (match-string 4 new)))
-      (save-excursion
-        (beginning-of-line)
-        (skip-chars-forward " \t")
-        (when (looking-at org-clock-string)
-          (when (re-search-forward
-                 (concat "\\[" org-ts-regexp1 "\\]--\\[" org-ts-regexp1 "\\]")
-                 (line-end-position))
-            (replace-match from-hh nil t nil 7)
-            (replace-match from-mm nil t nil 8)
-            (replace-match to-hh nil t nil 15)
-            (replace-match to-mm nil t nil 16)
-            (org-clock-update-time-maybe)))))))
+(defun org-clock-change-hh-mm (&optional use-existing new-value)
+  "When on a CLOCK line, replace the two HH:MM stamps with new ones, entered as HH:MM-HH:MM,
+or HH:MM- to replace only the first one, or -HH:MM to replace only the second one.
+With prefix USE-EXISTING, ignore NEW-VALUE, prompt for new timestamp
+using the existing timestamps as initial input.
+Without a prefix argument and with a nil NEW-VALUE (i.e. the default when called interactively),
+prompt for a new timestamp to be entered.
+Without a prefix argument and a non-nil NEW-VALUE, the latter will be used for replacement."
+  (interactive "P")
+  (save-excursion
+    (beginning-of-line)
+    (skip-chars-forward " \t")
+    (cond
+     ((and (looking-at org-clock-string)
+           (re-search-forward
+            (concat "\\[" org-ts-regexp1 "\\]\\(?:--\\[" org-ts-regexp1 "\\]\\)?")
+            (line-end-position)
+            t))
+      ;; define "constants" for matched expressions
+      (let ((matches-in-line (match-data))
+        (from-hh-num 7)
+        (from-mm-num 8)
+        (to-hh-num 15)
+        (to-mm-num 16))
+        ;; 1. initialise arguments
+        (when (equal new-value nil)
+          ;; prompt for new value
+          (setq new-value
+                (read-string "New timestamps on same days (HH:MM-HH:MM): "
+                             ;; If we didn't want to use the INITIAL-INPUT argument,
+                             ;; we could have used (interactive "Mprompt") for this function.
+                             (if use-existing
+                                 ;; use existing as initial input for prompt
+                                 (let ((from-hh (match-string from-hh-num))
+                                       (from-mm (match-string from-mm-num))
+                                       (to-hh (match-string to-hh-num))
+                                       (to-mm (match-string to-mm-num)))
+                                   (cond
+                                    (from-hh
+                                     (cond
+                                      ;; HH:MM-HH:MM
+                                      (to-hh
+                                       (format "%s:%s-%s:%s"
+                                               (match-string from-hh-num)
+                                               (match-string from-mm-num)
+                                               (match-string to-hh-num)
+                                               (match-string to-mm-num)))
+                                      ;; HH:MM-
+                                      (t
+                                       (format "%s:%s-"
+                                               (match-string from-hh-num)
+                                               (match-string from-mm-num)))))
+                                    ;; -HH:MM
+                                    (t
+                                     (format "-%s:%s"
+                                             (match-string to-hh-num)
+                                             (match-string to-mm-num))))))
+                             nil)))
+        (cond
+         ;; 2. check whether new value is well-formed
+         ((string-match "\\(\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)\\)?-\\(\\([0-9]\\{1,2\\}\\):\\([0-9]\\{2\\}\\)\\)?" new-value)
+          (let ((from-hh (match-string 2 new-value))
+                (from-mm (match-string 3 new-value))
+                (to-hh (match-string 5 new-value))
+                (to-mm (match-string 6 new-value)))
+            ;; 3. perform replace
+            (set-match-data matches-in-line)
+            (when from-hh
+              (replace-match (format "%02d" (string-to-number from-hh)) nil t nil from-hh-num)
+              (replace-match from-mm nil t nil from-mm-num))
+            (when to-hh
+              (replace-match (format "%02d" (string-to-number to-hh)) nil t nil to-hh-num)
+              (replace-match to-mm nil t nil to-mm-num)))
+          (org-clock-update-time-maybe))
+         (t (message "New timestamps not well-formed")))))
+     (t (message "Not on a clock line with timestamps; therefore this function has no effect")))))
 
 (define-key org-mode-map (kbd "\C-co:") 'org-clock-change-hh-mm)
 
