@@ -106,6 +106,8 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/xquery.el"))
 
+(load-file (expand-file-name "~/.emacs.d/init/user.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/post.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/google-this.el"))
