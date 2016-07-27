@@ -164,6 +164,7 @@
 ;; (load-file (expand-file-name "~/.emacs.d/init/style-check.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/font-lock.el"))
+(load-file (expand-file-name "~/.emacs.d/init/fonts.el"))
 
 ;; Help
 ;; disabled because rectangle editing commands (e.g. C-x r t) no longer work
@@ -282,5 +283,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "outline" :family "Consolas"))))
+ '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "outline" :family "Fira Code"))))
  '(hl-line ((t (:background "#F1DD9B")))))
