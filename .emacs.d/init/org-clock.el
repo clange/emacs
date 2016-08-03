@@ -19,33 +19,15 @@
   "Marks the current item done as defined by \\[org-todo].
 The most recent time logged for this item is used as closing time."
   (interactive)
-  (let (commentp
-        (ts
+  (let ((ts
          (save-excursion
            (org-clock-find-position nil)
            (when (looking-at (concat "\\([ \t]*" org-clock-string " *\\)"
                                      "\\([[<][^]>]+[]>]\\)\\(-+\\)\\([[<][^]>]+[]>]\\)"
                                      "\\(?:[ \t]*=>.*\\)?"))
              (match-string 4)))))
-    ;; large parts of the following are copied from the inner workings of org-todo
-    (save-excursion
-      (catch 'exit
-        (org-back-to-heading t)
-        (when (org-in-commented-heading-p t)
-          (org-toggle-comment)
-          (setq commentp t))
-        (if (looking-at org-outline-regexp) (goto-char (1- (match-end 0))))
-        (or (looking-at (concat " +" org-todo-regexp "\\( +\\|[ \t]*$\\)"))
-            (looking-at "\\(?: *\\|[ \t]*$\\)"))
-        (let* ((match-data (match-data))
-               (org-log-done nil)
-               (this (match-string 1))
-               (head (org-get-todo-sequence-head this))
-               (ass (assoc head org-todo-kwd-alist))
-               (done-word (nth 3 ass)))
-          (org-todo (or done-word (car org-done-keywords)))
-          (org-add-planning-info 'closed (org-time-string-to-time ts)))
-        (when commentp (org-toggle-comment))))))
+    (org-todo 'done)
+    (org-add-planning-info 'closed (org-time-string-to-time ts))))
 
 (define-key org-mode-map (kbd "\C-cod") 'org-todo-mark-done-from-log)
 
