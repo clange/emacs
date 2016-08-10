@@ -27,6 +27,7 @@ The most recent time logged for this item is used as closing time."
                                      "\\(?:[ \t]*=>.*\\)?"))
              (match-string 4)))))
     (org-todo 'done)
+    ;; TODO handle the case of blocked state changes
     (org-add-planning-info 'closed (org-time-string-to-time ts))))
 
 (define-key org-mode-map (kbd "\C-cod") 'org-todo-mark-done-from-log)
