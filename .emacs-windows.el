@@ -98,6 +98,7 @@
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/xtag.el"))
 
+;; Org mode
 (load-file (expand-file-name "~/.emacs.d/init/org.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-babel.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-clock.el"))
@@ -111,13 +112,11 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/remember.el"))
 
-(load-file (expand-file-name "~/.emacs.d/init/charmap.el"))
-
+;; LaTeX
 (load-file (expand-file-name "~/.emacs.d/init/auctex.el"))
 (load-file (expand-file-name "~/.emacs.d/init/reftex.el"))
 (load-file (expand-file-name "~/.emacs.d/init/bibtex.el"))
 (load-file (expand-file-name "~/.emacs.d/init/synctex.el"))
-
 ;; (load-file (expand-file-name "~/.emacs.d/init/stex.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/nomdoc.el"))
@@ -126,10 +125,9 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/markdown-pandoc.el"))
 
+;; Semantic Web
 (load-file (expand-file-name "~/.emacs.d/init/n3.el"))
 (load-file (expand-file-name "~/.emacs.d/init/owl.el"))
-
-;; (load-file (expand-file-name "~/.emacs.d/init/xquery.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/user.el"))
 
@@ -145,14 +143,15 @@
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/ensime.el"))
 
+;; Character input
+(load-file (expand-file-name "~/.emacs.d/init/charmap.el"))
 (load-file (expand-file-name "~/.emacs.d/init/agda-input.el"))
 
+;; Software project management
 (load-file (expand-file-name "~/.emacs.d/init/magit.el"))
 (load-file (expand-file-name "~/.emacs.d/init/magit-svn.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/magit-fix-diff-color.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/git.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/projectile.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/mediawiki.el"))
@@ -160,9 +159,10 @@
 ;; Writing
 (load-file (expand-file-name "~/.emacs.d/init/writegood.el"))
 (load-file (expand-file-name "~/.emacs.d/init/langtool.el"))
-;; (load-file (expand-file-name "~/.emacs.d/init/inflections.el"))
-;; (load-file (expand-file-name "~/.emacs.d/init/style-check.el"))
+(load-file (expand-file-name "~/.emacs.d/init/inflections.el"))
+(load-file (expand-file-name "~/.emacs.d/init/style-check.el"))
 
+;; Fonts
 (load-file (expand-file-name "~/.emacs.d/init/font-lock.el"))
 (load-file (expand-file-name "~/.emacs.d/init/fonts.el"))
 
@@ -187,11 +187,11 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/calculator.el"))
 
+;; XML
 (load-file (expand-file-name "~/.emacs.d/init/nxml.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/sgml.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/emmet.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/xquery.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/calendar.el"))
 
@@ -199,12 +199,13 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/confirm-kill.el"))
 
+;; Windows-specific configuration
 (load-file (expand-file-name "~/.emacs.d/init/windows-bell.el"))
 (load-file (expand-file-name "~/.emacs.d/init/windows-locale.el"))
 (load-file (expand-file-name "~/.emacs.d/init/windows-unicode.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/cygwin.el"))
 
+;; Further system-specific configuration
 (load-file (expand-file-name "~/.emacs.d/init/system-specific.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/open-my-files.el"))
@@ -238,7 +239,7 @@
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
    (quote
-    (yankpad pandoc general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company company-auctex company-math company-ngram company-statistics company-web smartrep org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
+    (ace-window yankpad pandoc general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company company-auctex company-math company-ngram company-statistics company-web smartrep org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag htmlize hydra n3-mode org-plus-contrib powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix org2blog omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
  '(safe-local-variable-values
    (quote
     ((org-tags-exclude-from-inheritance quote
