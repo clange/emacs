@@ -16,7 +16,7 @@
       (previous-line 2)
       (delete-region (point) end))
     ; cursor is on the beginning of the sender's name/address
-    (join-line (universal-argument))
+    (join-line t)
     (let ((begin (point)))
       (when (search-forward "Sent: ")
         (delete-region begin (point))))
@@ -37,9 +37,9 @@
     (kill-region (point) (point-max))
     (goto-char (point-min))
     ; insert quoted body at the beginning of the buffer
-    (yank) ; (yank (universal-argument)) should do the right thing (yanking below cursor) but doesn't work
-    (goto-char (point-min))
-    (next-line)))
+    (yank 4) ; yank below cursor
+    ;; TODO (open-line 2) doesn't work
+    ))
 
 (add-hook 'post-mode-hook
           #'(lambda()
