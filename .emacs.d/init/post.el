@@ -37,7 +37,7 @@
     (kill-region (point) (point-max))
     (goto-char (point-min))
     ; insert quoted body at the beginning of the buffer
-    (yank 4) ; yank below cursor
+    (yank '(4)) ; yank below cursor
     ;; TODO (open-line 2) doesn't work
     ))
 
