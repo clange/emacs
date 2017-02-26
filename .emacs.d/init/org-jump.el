@@ -19,6 +19,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+;; TODO improve according to https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00553.html
 (defun org-jump-to-child ()
   "Interactively prompts for the title of a child node of the current heading and jumps to the last child node having that title.  This function will not work if the first child node is not exactly one level below the current heading."
   (interactive)
