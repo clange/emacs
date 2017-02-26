@@ -9,3 +9,7 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+(cond
+ ((eq system-type 'windows-nt)
+  (setq magit-git-executable "c:\\Program Files\\Git\\cmd\\git.exe")))
