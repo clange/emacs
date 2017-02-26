@@ -1,5 +1,5 @@
 (winner-mode 1)
 
-(use-package ace-window
-  :bind ("M-`" . ace-window)
+(use-package winum
   :ensure t)
+(winum-mode)
