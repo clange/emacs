@@ -39,6 +39,7 @@
 				(langtool . "melpa-stable")
 				(helm . "melpa-stable")
 				(helm-core . "melpa-stable")
+				(htmlize . "melpa-stable")
 				(magit . "melpa-stable")
 				(magit-popup . "melpa-stable")
 				(magit-svn . "melpa-stable")
