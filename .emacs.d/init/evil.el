@@ -21,6 +21,7 @@
   (add-to-list 'evil-emacs-state-modes mode))
 (dolist (mode '(
                 log-edit-mode
+                vc-git-log-edit-mode
                 ))
   (add-to-list 'evil-insert-state-modes mode))
 (dolist (mode '(
