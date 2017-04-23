@@ -9,6 +9,7 @@
   "e" 'ido-find-file
   "b" 'ido-switch-buffer
   "k" 'ido-kill-buffer
+  "s" 'save-buffer
   "v" 'vc-prefix-map
   "+" 'evil-numbers/inc-at-pt
   "-" 'evil-numbers/dec-at-pt
