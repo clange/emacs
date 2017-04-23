@@ -218,6 +218,7 @@
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
  '(blink-cursor-mode nil)
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(browse-url-mailto-function nil)
  '(case-fold-search t)
  '(column-number-mode t)
