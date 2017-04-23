@@ -11,6 +11,7 @@
   "k" 'ido-kill-buffer
   "s" 'save-buffer
   "v" 'vc-prefix-map
+  "w" 'winum-base-map
   "+" 'evil-numbers/inc-at-pt
   "-" 'evil-numbers/dec-at-pt
   "<SPC>" 'avy-goto-char-2)
