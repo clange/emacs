@@ -77,7 +77,7 @@
         '("X" "One month from today"
            ((agenda ""))
            ((org-agenda-span 'month))
-           ("~/Dropbox/Sync/agenda.html")))
+           ("~/owncloud/uni-bonn.sciebo.de/sync/agenda.html")))
   
   ;; http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/
   (defun org-mode-reftex-setup ()
