@@ -197,7 +197,7 @@ Without a prefix argument and a non-nil NEW-VALUE, the latter will be used for r
 
 (setq org-clock-history-length 35)
 (setq org-clock-idle-time 10)
-(setq org-clock-into-drawer 2)
+(setq org-clock-into-drawer t)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-log-into-drawer t)
 (setq org-log-redeadline 'note)
