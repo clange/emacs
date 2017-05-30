@@ -2,4 +2,5 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((sh . t)))
+ '((calc . t)
+   (sh . t)))
