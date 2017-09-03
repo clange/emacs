@@ -15,7 +15,6 @@
                 git-rebase-mode
                 magit-popup-mode
                 makey-key-mode
-                org-mode
                 reftex-select-label-mode ;; TODO report as bug in evil-vars.el
                 ))
   (add-to-list 'evil-emacs-state-modes mode))
