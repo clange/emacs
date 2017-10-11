@@ -27,7 +27,7 @@
     (forward-line)
     ; cursor is on the beginning of the next header field
     (let ((begin (point)))
-      (when (search-forward-regexp "^$")
+      (when (search-forward-regexp "^[[:space:] ]*$")
         (forward-line)
         (delete-region begin (point))))
     ; cursor is on the beginning of the email body
