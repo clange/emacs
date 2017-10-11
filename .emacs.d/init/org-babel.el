@@ -3,4 +3,4 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((calc . t)
-   (sh . t)))
+   (shell . t)))

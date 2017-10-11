@@ -202,4 +202,4 @@ Without a prefix argument and a non-nil NEW-VALUE, the latter will be used for r
 (setq org-log-into-drawer t)
 (setq org-log-redeadline 'note)
 (setq org-log-reschedule 'note)
-(setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
+(setq org-duration-format '((special . h:mm)))
