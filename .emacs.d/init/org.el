@@ -173,5 +173,6 @@
   (setq org-refile-use-outline-path t)
   (setq org-support-shift-select nil)
   (setq org-tags-column -90)
+  (setq org-time-stamp-custom-formats '("<%a %d %b %Y>" . "<%a %d %b %Y %H:%M>"))
   (setq org-use-speed-commands t)
 )
