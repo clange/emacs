@@ -50,6 +50,8 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/diminish.el"))
 
+(load-file (expand-file-name "~/.emacs.d/init/hyperbole.el"))
+
 ;; Jump/bookmarks
 (load-file (expand-file-name "~/.emacs.d/init/bookmarks.el"))
 (load-file (expand-file-name "~/.emacs.d/init/avy.el"))
@@ -241,7 +243,7 @@
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
    (quote
-    (pandoc yankpad org2blog org-plus-contrib pandoc-mode mediawiki bookmark+ htmlize winum general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company-auctex company-math company-ngram company-statistics company-web smartrep org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag hydra n3-mode powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
+    (hyperbole pandoc yankpad org2blog org-plus-contrib pandoc-mode mediawiki bookmark+ htmlize winum general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company-auctex company-math company-ngram company-statistics company-web smartrep org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag hydra n3-mode powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix omn-mode magit-svn langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish)))
  '(safe-local-variable-values
    (quote
     ((org-latex-pdf-process "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f")
@@ -292,3 +294,4 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "outline" :family "Fira Code"))))
  '(hl-line ((t (:background "#F1DD9B")))))
+(put 'scroll-left 'disabled nil)
