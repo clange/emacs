@@ -9,5 +9,5 @@
  ((eq system-type 'windows-nt)
   ;; corresponding setting in SumatraPDF:
   ;; emacsclientw --no-wait +%l "%f"
-  (setq TeX-view-program-list (quote (("SumatraPDF" "\"C:/Program Files (x86)/SumatraPDF/SumatraPDF.exe\" -reuse-instance %o"))))
+  (setq TeX-view-program-list `(("SumatraPDF" ,(concat (if (file-exists-p "C:/Program Files/SumatraPDF/SumatraPDF.exe") "\"C:/Program Files/SumatraPDF/SumatraPDF.exe\"" "\"C:/Program Files (x86)/SumatraPDF/SumatraPDF.exe\"") " -reuse-instance %o"))))
   (setq TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "SumatraPDF") (output-html "cygstart"))))))

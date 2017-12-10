@@ -33,7 +33,8 @@
 
 (with-eval-after-load "org"
   (require 'helm-org-rifle)
-  (global-set-key (kbd "C-c o h") 'helm-org-agenda-files-headings))
+  (global-set-key (kbd "C-c o h") 'helm-org-agenda-files-headings)
+  (define-key org-mode-map (kbd "\C-cof") 'helm-org-rifle-current-buffer))
 
 (autoload 'helm-bibtex "helm-bibtex" "" t)
 (setq bibtex-completion-bibliography '(
