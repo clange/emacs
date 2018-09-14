@@ -50,11 +50,8 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/diminish.el"))
 
-(load-file (expand-file-name "~/.emacs.d/init/hyperbole.el"))
-
-;; Jump/bookmarks
-(load-file (expand-file-name "~/.emacs.d/init/bookmarks.el"))
-(load-file (expand-file-name "~/.emacs.d/init/avy.el"))
+;; evaluate when I have more time
+;; (load-file (expand-file-name "~/.emacs.d/init/hyperbole.el"))
 
 ;; Hydra
 (load-file (expand-file-name "~/.emacs.d/init/hydra.el"))
@@ -115,6 +112,10 @@
 (load-file (expand-file-name "~/.emacs.d/init/yankpad.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/remember.el"))
+
+;; Jump/bookmarks
+(load-file (expand-file-name "~/.emacs.d/init/bookmarks.el"))
+(load-file (expand-file-name "~/.emacs.d/init/avy.el"))
 
 ;; LaTeX
 (load-file (expand-file-name "~/.emacs.d/init/auctex.el"))
