@@ -108,6 +108,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
+(load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-other.el"))
 

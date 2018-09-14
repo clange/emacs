@@ -59,7 +59,7 @@
           (org-show-context))
       (message "No children."))))
 
-(define-key org-mode-map (kbd "\C-coc") 'org-jump-to-child)
+; (define-key org-mode-map (kbd "\C-coc") 'org-jump-to-child)
 
 (defun org-jump-to-id ()
   "Interactively prompts for an identifier and searches for the first node in the current file that has this identifier as a CUSTOM_ID property."
