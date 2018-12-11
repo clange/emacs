@@ -14,18 +14,15 @@
   (let ((saved-point (point)))
     (backward-word)
     (cond
-     ((looking-at "\\([[:upper:]][[:alpha:]]*\\)\\(en\\|er\\)\\>")
+     ((looking-at "\\([[:upper:]][[:alpha:]]*\\)\\(en\\|er\\|ern\\)\\>")
       (let* ((word (match-string 0))
              (prefix (match-string 1))
-             (suffix (match-string 2))
-             (suffix-en (equal "en" suffix)))
+             (suffix (match-string 2)))
         (kill-word 1)
         (insert prefix)
-        (if suffix-en 
-            (insert "inn"))
-        (insert suffix)
-        (unless suffix-en
-          (insert "innen"))
+        (cond
+         ((equal suffix "en") (insert "innen"))
+         (t (insert "erinnen")))
         (insert " und ")
         (insert word)))
      (t (goto-char saved-point)))))
