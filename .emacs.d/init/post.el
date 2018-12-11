@@ -8,6 +8,30 @@
                                     (insert "> …
 ")))
 
+; expand the word before cursor into both female and male forms, if it is a German male word
+(defun both-german-genders ()
+  (interactive)
+  (let ((saved-point (point)))
+    (backward-word)
+    (cond
+     ((looking-at "\\([[:upper:]][[:alpha:]]*\\)\\(en\\|er\\)\\>")
+      (let* ((word (match-string 0))
+             (prefix (match-string 1))
+             (suffix (match-string 2))
+             (suffix-en (equal "en" suffix)))
+        (kill-word 1)
+        (insert prefix)
+        (if suffix-en 
+            (insert "inn"))
+        (insert suffix)
+        (unless suffix-en
+          (insert "innen"))
+        (insert " und ")
+        (insert word)))
+     (t (goto-char saved-point)))))
+
+(define-key post-mode-map "\C-c*" 'both-german-genders)
+
 ; full-quote the email; reply inline
 (defun full-quote-reply-inline ()
   (interactive)
