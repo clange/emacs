@@ -74,6 +74,23 @@
 
 (define-key org-mode-map (kbd "\C-coj") 'org-jump-to-id)
 
+(defun org-yank-subtree-with-id ()
+  "Interactively prompts for an identifier and yanks a copy of the first subtree in the current file that has this identifier as a CUSTOM_ID property, removing that property from the yanked subtree."
+  (interactive)
+  (save-excursion 
+    (org-jump-to-id)
+    (org-copy-subtree))
+  (org-paste-subtree)
+  (let* ((property-block (org-get-property-block))
+         (start (car property-block))
+         (end (cdr property-block)))
+    (delete-region start end)
+    (save-excursion
+      (if (re-search-forward org-drawer-regexp end t)
+          (org-remove-empty-drawer-at (point))))))
+
+(define-key org-mode-map (kbd "\C-coy") 'org-yank-subtree-with-id)
+
 (defun org-jump-to-first-node-with-property-value (property value)
   (interactive)
   (goto-char
