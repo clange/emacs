@@ -1,4 +1,4 @@
 ;; Org nav
 (require 'orgnav)
 
-(global-set-key "\C-coc" 'orgnav-search-subtree)
+(define-key org-mode-map (kbd "\C-coc") 'orgnav-search-subtree)
