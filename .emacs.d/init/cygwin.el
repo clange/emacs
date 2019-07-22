@@ -14,6 +14,9 @@
     ;; (e.g., "shell -c command")
     (setq shell-file-name explicit-shell-file-name))
 
+  (require 'fakecygpty)
+  (fakecygpty-activate)
+
   ;; make sure we are not using CMD's FIND
 
   (add-to-list 'Info-directory-list
