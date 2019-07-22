@@ -1,3 +1,2 @@
-(use-package bookmark+
-  :ensure t)
+(require 'bookmark+)
 (setq bookmark-version-control t)

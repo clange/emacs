@@ -1,5 +1,6 @@
 ;; AUCTeX
-(require 'tex-site)
+(use-package tex-site
+  :ensure auctex)
 (setq TeX-parse-self t) ; Enable parse on load.
 (setq TeX-auto-save t)  ; Enable parse on save.
 (setq-default TeX-master t) ; Query for master file.

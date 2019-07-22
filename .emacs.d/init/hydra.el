@@ -1,5 +1,6 @@
 ;; Hydra
-(require 'hydra-examples)
+(use-package hydra-examples
+	 :ensure hydra)
 (defhydra hydra-splitter (global-map "C-c y o")
     "splitter"
     ("h" hydra-move-splitter-left)

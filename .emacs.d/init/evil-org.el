@@ -1,3 +1,4 @@
 ;; evil setup for org-mode
-(require 'evil-org)
+(use-package evil-org
+  :ensure t)
 (diminish 'evil-org-mode)

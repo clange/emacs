@@ -1,4 +1,5 @@
-(require 'helm-config)
+(use-package helm-config
+  :ensure helm)
 (require 'helm-command)
 ;; (require 'helm-descbinds)
 
@@ -32,7 +33,8 @@
 (global-set-key (kbd "C-c r") 'helm-mini)
 
 (with-eval-after-load "org"
-  (require 'helm-org-rifle)
+  (use-package helm-org-rifle
+    :ensure t)
   (global-set-key (kbd "C-c o h") 'helm-org-agenda-files-headings)
   (define-key org-mode-map (kbd "\C-cof") 'helm-org-rifle-current-buffer))
 

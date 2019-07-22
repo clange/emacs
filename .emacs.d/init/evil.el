@@ -1,9 +1,11 @@
 ; a prerequisite (should be required by evil, but sometimes that doesn't work)
-(require 'goto-chg)
+(use-package goto-chg
+  :ensure t)
 (global-set-key [(control ?.)] 'goto-last-change)
 (global-set-key [(control ?,)] 'goto-last-change-reverse)
 
-(require 'evil)
+(use-package evil
+  :ensure t)
 (evil-mode 1)
 
 ;; modes

@@ -1,2 +1,3 @@
 ;; inflections
-(require 'inflections)
+(use-package inflections
+  :ensure t)

@@ -76,6 +76,7 @@ Let the current time interval be A--C.  By default, this function interactively 
 (define-key org-mode-map (kbd "\C-cos") 'org-clock-split-current-interval)
 
 (use-package org-clock-convenience
+  :ensure t
   :init
   (progn
     ;; https://github.com/dfeich/org-clock-convenience

@@ -1,5 +1,6 @@
 ;; Org Blog
-(require 'org2blog-autoloads)
+(use-package org2blog
+  :ensure t)
 (setq org2blog/wp-blog-alist
       '(("kwarc"
          :url "https://kwarc.info/blog/xmlrpc.php"

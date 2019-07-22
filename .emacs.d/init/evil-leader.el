@@ -1,5 +1,6 @@
 ;; leader:
-(require 'evil-leader)
+(use-package evil-leader
+  :ensure t)
 ; enable evil-leader-mode before evil-mode
 (evil-leader/set-leader "<SPC>")
 (global-evil-leader-mode)

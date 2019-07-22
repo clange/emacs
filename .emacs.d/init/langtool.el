@@ -1,5 +1,6 @@
 ;; LanguageTool
-(require 'langtool)
+(use-package langtool
+  :ensure t)
 (setq langtool-language-tool-jar (expand-file-name "~/tools/LanguageTool/languagetool-commandline.jar"))
 (global-set-key "\C-x4w" 'langtool-check-buffer)
 (global-set-key "\C-x4W" 'langtool-check-done)

@@ -1,5 +1,9 @@
 ;; Org mode
-(require 'dash)
+(use-package dash
+  :ensure t)
+
+(use-package org
+  :ensure org-plus-contrib)
 
 (let* ((my-org-directory (file-name-as-directory (expand-file-name "~/svn/kwarc.info/clange/org")))
        (my-org-default-file (expand-file-name "default.org" my-org-directory))
