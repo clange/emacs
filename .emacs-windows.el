@@ -29,7 +29,7 @@
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/load-path-org-git.el"))
 
-(load-file (expand-file-name "~/.emacs.d/init/load-path-org2blog.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/load-path-org2blog.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/load-path-package.el"))
 
@@ -57,12 +57,10 @@
 ;; evaluate when I have more time
 ;; (load-file (expand-file-name "~/.emacs.d/init/hyperbole.el"))
 
-;; Hydra
-(load-file (expand-file-name "~/.emacs.d/init/hydra.el"))
-
 ;; Evil
-(load-file (expand-file-name "~/.emacs.d/init/evil-leader.el"))
+(load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil.el"))
+(load-file (expand-file-name "~/.emacs.d/init/evil-leader.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-exchange.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-matchit.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-numbers.el"))
@@ -71,8 +69,6 @@
 (load-file (expand-file-name "~/.emacs.d/init/evil-quickscope.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/exato.el"))
-
-(load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
 
 ;; Numbers
 (load-file (expand-file-name "~/.emacs.d/init/operate-on-number.el"))
@@ -115,6 +111,9 @@
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-other.el"))
 
+;; Hydra
+(load-file (expand-file-name "~/.emacs.d/init/hydra.el"))
+
 (load-file (expand-file-name "~/.emacs.d/init/yankpad.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/remember.el"))
@@ -137,6 +136,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/markdown-pandoc.el"))
 
 ;; Semantic Web
+(load-file (expand-file-name "~/.emacs.d/init/rdf-prefix.el"))
 (load-file (expand-file-name "~/.emacs.d/init/n3.el"))
 (load-file (expand-file-name "~/.emacs.d/init/owl.el"))
 
@@ -286,15 +286,15 @@
      (xsl-element-indent-step . 4)
      (org-export-ascii-table-keep-all-vertical-lines . t)
      (org-export-ascii-links-to-notes . t)
-     (org-export-ascii-links-to-notes)))
+     (org-export-ascii-links-to-notes))))
  '(save-place t nil (saveplace))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
- '(send-mail-function 'mailclient-send-it)
+ '(send-mail-function (quote mailclient-send-it))
  '(show-paren-mode t)
- '(show-paren-style 'mixed)
- '(tab-always-indent 'complete)
- '(text-mode-hook '(turn-on-visual-line-mode text-mode-hook-identify))
+ '(show-paren-style (quote mixed))
+ '(tab-always-indent (quote complete))
+ '(text-mode-hook (quote (turn-on-visual-line-mode text-mode-hook-identify)))
  '(tool-bar-mode nil)
  '(transient-mark-mode t)
  '(word-wrap t))
