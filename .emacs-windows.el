@@ -1,3 +1,7 @@
+(setq gc-cons-threshold 100000000)
+
+(let ((file-name-handler-alist nil))
+
 ; (package-initialize)
 
 (load-file (expand-file-name "~/.emacs.d/init/cl.el"))
@@ -217,6 +221,8 @@
 (load-file (expand-file-name "~/.emacs.d/init/system-specific.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/open-my-files.el"))
+
+)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
