@@ -113,6 +113,16 @@
   ;; Set to <your Dropbox root directory>/MobileOrg.
   (setq org-mobile-directory "~/Dropbox/MobileOrg")
 
+  ;; disable org-global-cycle in large buffers, as it takes forever
+  (defun org-global-cycle-if-small-file (&rest arguments)
+    "Only execute org-global-cycle if the buffer is smaller than 1 MiB."
+    ;; small buffer: return t
+    ;; large buffer: return nil; print message
+    (not (and (>= (buffer-size) 1048576) (message "Buffer is too large for cycling global visibility"))))
+
+  (advice-add 'org-global-cycle :before-while 'org-global-cycle-if-small-file)
+  ;; (advice-remove 'org-global-cycle 'org-global-cycle-if-small-file)
+
   ;; http://orgmode.org/Changes.html#orgheadline1
   (defun org-repair-property-drawers ()
     "Fix properties drawers in current buffer.
