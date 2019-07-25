@@ -5,7 +5,7 @@
 (use-package org
   :ensure org-plus-contrib)
 
-(let* ((my-org-directory (file-name-as-directory (expand-file-name "~/svn/kwarc.info/clange/org")))
+(let* ((my-org-directory (file-name-as-directory (expand-file-name "~/git/lange-bever.de/clange/org")))
        (my-org-default-file (expand-file-name "default.org" my-org-directory))
        (my-org-contacts-file (expand-file-name "contacts.org" my-org-directory)))
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
