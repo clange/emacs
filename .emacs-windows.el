@@ -220,8 +220,6 @@
 ;; Further system-specific configuration
 (load-file (expand-file-name "~/.emacs.d/init/system-specific.el"))
 
-(load-file (expand-file-name "~/.emacs.d/init/open-my-files.el"))
-
 )
 
 (custom-set-variables
@@ -249,7 +247,7 @@
  '(minibuffer-eldef-shorten-default t)
  '(org-agenda-files
    (quote
-    ("~/git/lange-bever.org/clange/org/default.org" "~/git/lange-bever.org/clange/org/contacts.org")))
+    ("~/git/lange-bever.de/clange/org/default.org" "~/git/lange-bever.de/clange/org/contacts.org")))
  '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default))))
  '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
  '(package-selected-packages
@@ -309,3 +307,5 @@
  '(hl-line ((t (:background "#F1DD9B"))))
  '(org-hide ((t (:foreground "wheat")))))
 (put 'scroll-left 'disabled nil)
+
+(load-file (expand-file-name "~/.emacs.d/init/open-my-files.el"))
