@@ -108,6 +108,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
+(load-file (expand-file-name "~/.emacs.d/init/orgtbl-aggregate.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-other.el"))
 
@@ -303,7 +304,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "outline" :family "Iosevka"))))
+ '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 108 :width normal :foundry "outline" :family "Iosevka"))))
  '(hl-line ((t (:background "#F1DD9B"))))
  '(org-hide ((t (:foreground "wheat")))))
 (put 'scroll-left 'disabled nil)
