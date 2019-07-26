@@ -113,7 +113,7 @@
   ;; Set to <your Dropbox root directory>/MobileOrg.
   (setq org-mobile-directory "~/Dropbox/MobileOrg")
 
-  ;; disable org-global-cycle in large buffers, as it takes forever
+  ;; Disable org-global-cycle in large buffers, as it takes forever
   (defun org-global-cycle-if-small-file (&rest arguments)
     "Only execute org-global-cycle if the buffer is smaller than 1 MiB."
     ;; small buffer: return t
