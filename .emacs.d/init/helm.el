@@ -33,6 +33,7 @@
 (global-set-key (kbd "C-c r") 'helm-mini)
 
 (with-eval-after-load "org"
+  (use-package helm-org)
   (use-package helm-org-rifle
     :ensure t)
   (global-set-key (kbd "C-c o h") 'helm-org-agenda-files-headings)
