@@ -106,6 +106,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/org-clock.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
+(load-file (expand-file-name "~/.emacs.d/init/org-recent-headings.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgtbl-aggregate.el"))
