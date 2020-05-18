@@ -64,7 +64,7 @@
 
 (add-hook 'post-mode-hook
           #'(lambda()
-            (turn-on-orgstruct)
+            (orgalist-mode)
             (turn-on-orgtbl)
             (make-local-variable 'sentence-end-double-space)
             (setq sentence-end-double-space nil)
