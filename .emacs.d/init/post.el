@@ -1,6 +1,9 @@
 ;; E-Mails
 (setq post-mail-message "\\(mutt-[a-z0-9]+-[0-9]+-[0-9]+.*\\|vimperator-exchange\\(-xfer1\\)?\\.iais\\.fraunhofer\\.de\\(-[0-9]+\\)?\\.tmp\\|tmp_exchange\\(-xfer1\\)?\\.iais\\.fraunhofer\\.de_[_[:alnum:]]+\\|kmail.*\\.tmp\\|\\.eml\\|mutt-ator-mail\\(-[0-9]+\\)?\\)\\'")
 
+(use-package orgalist
+  :ensure t)
+
 (require 'post)
 
 (define-key post-mode-map "\C-c." (lambda ()
