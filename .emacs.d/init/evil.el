@@ -21,6 +21,7 @@
                 ))
   (add-to-list 'evil-emacs-state-modes mode))
 (dolist (mode '(
+                git-commit-mode
                 log-edit-mode
                 vc-git-log-edit-mode
                 ))
