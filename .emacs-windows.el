@@ -4,7 +4,7 @@
 
 ; (package-initialize)
 
-(load-file (expand-file-name "~/.emacs.d/init/cl.el"))
+; (load-file (expand-file-name "~/.emacs.d/init/cl.el"))
 
 ;; Packages and paths
 ;; (load-file (expand-file-name "~/.emacs.d/init/gentoo.el"))
