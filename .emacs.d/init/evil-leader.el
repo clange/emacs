@@ -9,7 +9,7 @@
   "a" 'org-agenda
   "e" 'ido-find-file
   "b" 'ido-switch-buffer
-  "k" 'ido-kill-buffer
+  "k" 'helm-buffers-list
   "s" 'save-buffer
   "v" 'vc-prefix-map
   "w" 'winum-base-map
