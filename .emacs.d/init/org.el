@@ -174,7 +174,7 @@
            :clock-resume t)))
   (setq org-completion-use-ido t)
   (setq org-contacts-files (list my-org-contacts-file))
-  (setq org-directory "~/svn/kwarc.info/clange/org")
+  (setq org-directory "~/git/lange-bever.de/clange/org")
   (setq org-enforce-todo-checkbox-dependencies t)
   (setq org-enforce-todo-dependencies t)
   (setq org-goto-auto-isearch nil)
