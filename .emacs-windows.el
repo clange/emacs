@@ -247,15 +247,13 @@
  '(menu-bar-mode nil)
  '(minibuffer-eldef-shorten-default t)
  '(org-agenda-files
-   (quote
-    ("~/git/lange-bever.de/clange/org/default.org" "~/git/lange-bever.de/clange/org/contacts.org")))
- '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default))))
- '(org-latex-pdf-process (quote ("latexmk -g -pdf %f")))
+   '("~/git/lange-bever.de/clange/org/default.org" "~/git/lange-bever.de/clange/org/contacts.org"))
+ '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
+ '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
    '(yaml-mode org-recent-headings evil academic-phrases helm-org magit json-mode orgalist worf org-cliplink x-path-walker exato ahk-mode org-plus-contrib pdf-tools tablist magit-svn orgnav sparql-mode xquery-mode hyperbole pandoc yankpad org2blog pandoc-mode mediawiki bookmark+ htmlize winum general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company-auctex company-math company-ngram company-statistics company-web org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag hydra n3-mode powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix omn-mode langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish))
  '(safe-local-variable-values
-   (quote
-    ((org-odt-preferred-output-format . docx)
+   '((org-odt-preferred-output-format . docx)
      (org-latex-pdf-process "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f")
      (org-latex-pdf-process quote
                             ("latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
@@ -282,15 +280,15 @@
      (xsl-element-indent-step . 4)
      (org-export-ascii-table-keep-all-vertical-lines . t)
      (org-export-ascii-links-to-notes . t)
-     (org-export-ascii-links-to-notes))))
+     (org-export-ascii-links-to-notes)))
  '(save-place t nil (saveplace))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
- '(send-mail-function (quote mailclient-send-it))
+ '(send-mail-function 'mailclient-send-it)
  '(show-paren-mode t)
- '(show-paren-style (quote mixed))
- '(tab-always-indent (quote complete))
- '(text-mode-hook (quote (turn-on-visual-line-mode text-mode-hook-identify)))
+ '(show-paren-style 'mixed)
+ '(tab-always-indent 'complete)
+ '(text-mode-hook '(turn-on-visual-line-mode text-mode-hook-identify))
  '(tool-bar-mode nil)
  '(transient-mark-mode t)
  '(word-wrap t))
