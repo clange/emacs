@@ -196,6 +196,30 @@ Without a prefix argument and a non-nil NEW-VALUE, the latter will be used for r
 
 (define-key org-mode-map (kbd "\C-co:") 'org-clock-change-hh-mm)
 
+(defun org-clock-merge-log ()
+  "Merges the clock timestamps of the current item into those of the following item, then deletes the current item.  This function assumes that both items have a clock drawer."
+  (interactive)
+  (org-back-to-heading t)
+  (catch 'exit
+    (let* ((beg (line-beginning-position))
+           (end (save-excursion (outline-next-heading) (point)))
+           (drawer (org-clock-drawer-name)))
+      (if drawer
+          (progn
+            (goto-char beg)
+            (let ((drawer-re (concat "^[ \t]*:" (regexp-quote drawer) ":[ \t]*$")))
+              (while (re-search-forward drawer-re end t)
+                (let ((element (org-element-at-point)))
+                  (when (eq (org-element-type element) 'drawer)
+                    (let ((cend (org-element-property :contents-end element)))
+                      (goto-char cend)
+                      (throw 'exit t))))))
+            (message drawer)
+            )
+        (message "No clock drawer found in this item")))))
+
+(define-key org-mode-map (kbd "\C-com") 'org-clock-merge-log)
+
 (setq org-clock-history-length 35)
 (setq org-clock-idle-time 10)
 (setq org-clock-into-drawer t)
