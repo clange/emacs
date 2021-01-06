@@ -239,7 +239,7 @@
  '(fringe-mode 0 nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
  '(kill-whole-line t)
- '(longlines-show-effect #("Â¶
+ '(longlines-show-effect #("¶
     " 0 2 (face escape-glyph)))
  '(longlines-show-hard-newlines t)
  '(longlines-wrap-follows-window-size t)
