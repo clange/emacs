@@ -299,7 +299,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 108 :width normal :foundry "outline" :family "Iosevka"))))
+ '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 108 :width normal :foundry "outline" :family "Iosevka Term"))))
  '(hl-line ((t (:background "#F1DD9B"))))
  '(org-hide ((t (:foreground "wheat")))))
 (put 'scroll-left 'disabled nil)
