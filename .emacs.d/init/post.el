@@ -8,7 +8,7 @@
 
 (define-key post-mode-map "\C-c." (lambda ()
                                     (interactive)
-                                    (insert "> …
+                                    (insert "> [...]
 ")))
 
 ; expand the word before cursor into both female and male forms, if it is a German male word
