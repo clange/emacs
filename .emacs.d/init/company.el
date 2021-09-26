@@ -1,4 +1,7 @@
 ;; company – auto-completion
+(use-package company-math
+  :ensure t)
+
 (use-package company
   :diminish "↹"
   :ensure t
