@@ -2,8 +2,8 @@
 (use-package dash
   :ensure t)
 
-(use-package org
-  :ensure org-plus-contrib)
+;; (use-package org
+;;   :ensure org-plus-contrib)
 
 (let* ((my-org-directory (file-name-as-directory (expand-file-name "~/git/lange-bever.de/clange/org")))
        (my-org-default-file (expand-file-name "default.org" my-org-directory))
@@ -158,16 +158,16 @@
   (setq org-capture-templates
         `(("c" "Contacts" entry (file ,my-org-contacts-file) "* %^{Name}%^{CUSTOM_ID}p
   %?")
-          ("j" "Journal" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* %?\nEntered on %U\n   %i\n   %a"
+          ("j" "Journal" entry (id "eecedf40-4ab3-449a-ae5f-91f416dd85f0") "* %?\nEntered on %U\n   %i\n   %a"
            :prepend t)
-          ("w" "Log work task" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* %^{Description}  %^g%?"
+          ("w" "Log work task" entry (id "eecedf40-4ab3-449a-ae5f-91f416dd85f0") "* %^{Description}  %^g%?"
            :prepend t
            :clock-in t
            :clock-keep t)
-         ("t" "TODO" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* TODO %^{Description}
+         ("t" "TODO" entry (id "eecedf40-4ab3-449a-ae5f-91f416dd85f0") "* TODO %^{Description}
   DEADLINE: %^{DEADLINE}t"
            :prepend t) 
-          ("T" "TODO (and clock in)" entry (id "00fba618-a215-4d39-a8fd-88f1ffce1fdb") "* TODO %^{Description}
+          ("T" "TODO (and clock in)" entry (id "eecedf40-4ab3-449a-ae5f-91f416dd85f0") "* TODO %^{Description}
   DEADLINE: %^{DEADLINE}t"
            :prepend t
            :clock-in t
