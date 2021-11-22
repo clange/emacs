@@ -1,10 +1,9 @@
 ;; Package manager
 (require 'package)
 
-; (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (setq package-pinned-packages '(
 				(ace-jump-mode . "melpa-stable")
 				(ag . "melpa-stable")
@@ -16,8 +15,8 @@
 				(company-ngram . "melpa-stable")
 				(company-statistics . "gnu")
 				(company-web . "melpa-stable")
-				(dash . "melpa-stable")
-				(dash-functional . "melpa-stable")
+				;; (dash . "melpa-stable")
+				;; (dash-functional . "melpa-stable")
 				(diminish . "melpa-stable")
 				(discover . "melpa-stable")
 				(ebib . "melpa-stable")
