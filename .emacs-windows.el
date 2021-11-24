@@ -163,7 +163,7 @@
 
 ;; Software project management
 (load-file (expand-file-name "~/.emacs.d/init/magit.el"))
-(load-file (expand-file-name "~/.emacs.d/init/magit-svn.el"))
+; (load-file (expand-file-name "~/.emacs.d/init/magit-svn.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/magit-fix-diff-color.el"))
 (load-file (expand-file-name "~/.emacs.d/init/git.el"))
 (load-file (expand-file-name "~/.emacs.d/init/projectile.el"))
