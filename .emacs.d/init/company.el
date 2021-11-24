@@ -28,7 +28,7 @@
                                         ; ~/data/ngram/*.txt are used as data
     (setq company-ngram-data-dir "~/data/ngram")
                                         ; company-ngram does not support python2
-    (setq company-ngram-python "C:\\Python37\\python")
+    (setq company-ngram-python "C:\\Python310\\python")
     (company-ngram-init)
     ;; (add-to-list 'company-backends 'company-ngram-backend)
                                         ; or use `M-x turn-on-company-ngram' and
