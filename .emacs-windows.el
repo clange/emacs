@@ -30,6 +30,7 @@
 ;; (load-file (expand-file-name "~/.emacs.d/init/load-path-org-git.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/load-path-org2blog.el"))
+(load-file (expand-file-name "~/.emacs.d/init/load-path-org-logbook-sorter.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/load-path-package.el"))
 
@@ -104,10 +105,10 @@
 (load-file (expand-file-name "~/.emacs.d/init/org.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-babel.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-clock.el"))
-(load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-recent-headings.el"))
-(load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgtbl-aggregate.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
