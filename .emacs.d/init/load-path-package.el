@@ -47,7 +47,7 @@
 				(makey . "melpa-stable")
 				(markdown-mode . "melpa-stable")
 				(operate-on-number . "melpa-stable")
-				(org . "melpa-stable")
+				(org . "gnu")
 				(org2blog . "melpa-stable")
 				(pandoc . "melpa-stable")
 				(powershell . "melpa-stable")
