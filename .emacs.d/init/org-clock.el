@@ -220,6 +220,8 @@ Without a prefix argument and a non-nil NEW-VALUE, the latter will be used for r
 
 (define-key org-mode-map (kbd "\C-com") 'org-clock-merge-log)
 
+(require 'logbook-sorter)
+
 (setq org-clock-history-length 35)
 (setq org-clock-idle-time 10)
 (setq org-clock-into-drawer t)
