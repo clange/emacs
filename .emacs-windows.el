@@ -252,9 +252,10 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(yaml-mode org-recent-headings evil academic-phrases helm-org magit json-mode orgalist worf org-cliplink x-path-walker exato ahk-mode org-plus-contrib pdf-tools tablist magit-svn orgnav sparql-mode xquery-mode hyperbole pandoc yankpad org2blog pandoc-mode mediawiki bookmark+ htmlize winum general-close dash-functional orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company-auctex company-math company-ngram company-statistics company-web org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag hydra n3-mode powershell psvn helm-projectile projectile yasnippet auctex markdown-mode csv-mode charmap writegood-mode rdf-prefix omn-mode langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish))
+   '(org org2blog elmacro org-recent-headings evil academic-phrases helm-org json-mode orgalist org-cliplink x-path-walker exato ahk-mode pdf-tools tablist magit-svn orgnav sparql-mode xquery-mode hyperbole pandoc yankpad pandoc-mode mediawiki bookmark+ htmlize winum general-close orgtbl-aggregate cygwin-mount image+ peep-dired use-package ebib google-this helm-bibtex company-auctex company-math company-ngram company-statistics company-web org-clock-convenience evil-quickscope which-key helm-org-rifle operate-on-number 2048-game ag avy emmet-mode evil-exchange evil-surround helm-ag hydra n3-mode powershell psvn helm-projectile projectile yasnippet markdown-mode csv-mode charmap writegood-mode rdf-prefix omn-mode langtool inflections helm git-timemachine evil-org evil-numbers evil-matchit evil-leader discover diminish))
  '(safe-local-variable-values
-   '((org-odt-preferred-output-format . docx)
+   '((org-latex-prefer-user-labels . t)
+     (org-odt-preferred-output-format . docx)
      (org-latex-pdf-process "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f")
      (org-latex-pdf-process quote
                             ("latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
