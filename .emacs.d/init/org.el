@@ -176,7 +176,7 @@ DEADLINE: %^{DEADLINE}t"
          :clock-resume t)))
 (setq org-completion-use-ido t)
 (setq org-contacts-files (list my-org-contacts-file))
-(setq org-directory 'my-org-directory)
+(setq org-directory my-org-directory)
 (setq org-enforce-todo-checkbox-dependencies t)
 (setq org-enforce-todo-dependencies t)
 (setq org-goto-auto-isearch nil)
