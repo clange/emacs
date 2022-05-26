@@ -20,6 +20,8 @@
 (global-set-key "\C-cL" 'org-insert-link-global)
 (global-set-key "\C-cO" 'org-open-at-point-global)
 
+(define-key org-mode-map (kbd "C-c SPC") #'org-table-blank-field)
+
 (global-set-key "\C-co^" #'(lambda () (interactive) (org-back-to-heading)))
 
 (setq org-return-follows-link t)
@@ -176,11 +178,11 @@ DEADLINE: %^{DEADLINE}t"
          :clock-resume t)))
 (setq org-completion-use-ido t)
 (setq org-contacts-files (list my-org-contacts-file))
-(setq org-directory 'my-org-directory)
+(setq org-directory my-org-directory)
 (setq org-enforce-todo-checkbox-dependencies t)
 (setq org-enforce-todo-dependencies t)
 (setq org-goto-auto-isearch nil)
-(setq org-adapt-indentation 'headline-data)
+(setq org-adapt-indentation t)
 (setq org-id-extra-files '(my-org-default-old-file))
 (setq org-id-link-to-org-use-id (quote create-if-interactive-and-no-custom-id))
 (setq org-latex-listings t)
