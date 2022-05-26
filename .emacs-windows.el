@@ -252,7 +252,7 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(2048-game academic-phrases ag ahk-mode auctex avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-clock-convenience org-recent-headings org2blog orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package which-key winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
+   '(sbt-mode scala-mode jq-mode rnc-mode 2048-game academic-phrases ag ahk-mode auctex avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-clock-convenience org-recent-headings org2blog orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package which-key winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
@@ -289,6 +289,7 @@
  '(send-mail-function 'mailclient-send-it)
  '(show-paren-mode t)
  '(show-paren-style 'mixed)
+ '(smie-indent-basic 2)
  '(tab-always-indent 'complete)
  '(text-mode-hook '(turn-on-visual-line-mode text-mode-hook-identify))
  '(tool-bar-mode nil)
