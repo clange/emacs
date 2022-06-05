@@ -81,12 +81,43 @@
                      (let ((org-agenda-span 'day))
                        (org-calendar-goto-agenda))))))
 
-
 (add-to-list 'org-agenda-custom-commands
       '("X" "One month from today"
          ((agenda ""))
          ((org-agenda-span 'month))
          ("~/owncloud/uni-bonn.sciebo.de/sync/agenda.html")))
+
+(defun org-class-not-this-week ()
+  "Skip a recurring event once.
+If the agenda item at point was created by an `org-class' entry,
+change that entry to add a SKIP-WEEK argument for the selected week."
+  (interactive)
+  ;; code taken from org-agenda-switch-to in org-agenda.el
+  (if (and org-return-follows-link
+	   (not (org-get-at-bol 'org-marker))
+	   (org-in-regexp org-link-bracket-re))
+      (org-link-open-from-string (match-string 0))
+    (let* ((marker (or (org-get-at-bol 'org-marker)
+		       (org-agenda-error)))
+	   (buffer (marker-buffer marker))
+	   (pos (marker-position marker))
+           ;; code taken from org-agenda-goto-calendar in org-agenda.el
+           (day (or (get-text-property (min (1- (point-max)) (point)) 'day)
+		     (user-error "Don't know which date to open in calendar"))))
+      (unless buffer (user-error "Trying to switch to non-existent buffer"))
+      (with-current-buffer buffer
+        (widen)
+        (goto-char pos)
+        ;; actual functionality of this function starts here:
+        (save-restriction
+          (back-to-indentation)
+          ;; the .* before org-class allows for combining `org-class' with, e.g., `and'
+          (if (re-search-forward "<%%.*(org-class \\([0-9]\\{4\\} [0-9]\\{2\\} [0-9]\\{2\\} \\)\\{2\\}[0-6]\\( [0-9]\\{1,2\\}\\)*)" (line-end-position) t)
+            (progn
+              (backward-char)
+              (insert ? )
+              (insert (number-to-string (org-days-to-iso-week day))))
+            (user-error "No valid org-class entry found")))))))
 
 ;; http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/
 (defun org-mode-reftex-setup ()
