@@ -112,7 +112,7 @@ change that entry to add a SKIP-WEEK argument for the selected week."
         (save-restriction
           (back-to-indentation)
           ;; the .* before org-class allows for combining `org-class' with, e.g., `and'
-          (if (re-search-forward "<%%.*(org-class \\([0-9]\\{4\\} [0-9]\\{2\\} [0-9]\\{2\\} \\)\\{2\\}[0-6]\\( [0-9]\\{1,2\\}\\)*)" (line-end-position) t)
+          (if (re-search-forward "<%%.*(org-class \\([0-9]\\{4\\} [0-9]\\{2\\} [0-9]\\{2\\} \\)\\{2\\}[0-6]\\( \\([0-9]\\{1,2\\}\\|'holidays\\|\"[^\"]*\"\\)\\)*)" (line-end-position) t)
             (progn
               (backward-char)
               (insert ? )
