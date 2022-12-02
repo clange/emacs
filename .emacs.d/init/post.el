@@ -67,7 +67,13 @@
     ;; TODO (open-line 2) doesn't work
     )
   ;; Outlook
-  (when (search-forward-regexp "^> -----Original Message-----$" nil t)
+  (setq first-quote nil)
+  (while (search-forward-regexp "^> -----Original Message-----$" nil t)
+    (when (not first-quote)
+      (setq first-quote
+            (save-excursion
+              (beginning-of-line nil)
+              (point))))
     (let ((end (point)))
       (forward-line -1)
       (delete-region (point) end))
@@ -106,18 +112,17 @@
       (when (search-forward-regexp "^[[:space:] ]*$")
         (forward-line)
         (delete-region begin (point))))
-    (forward-line -1)
-    ;; FIXME get this done without the kill-ring, i.e. without messing with the system clipboard
-    (let ((quoted-text (buffer-substring (point) (point-max))))
-      (delete-region (point) (point-max))
-      (goto-char (point-min))
-      ; insert quoted body at the beginning of the buffer
-      (insert quoted-text))
-    (open-line 2)
-    ;; note: if you would like to edit the message in Evil insert mode, do
-    ;; (add-to-list 'evil-insert-state-modes 'post-mode)
-    ;; in your Evil customization
-    ))
+    (forward-line -1))
+  (let ((quoted-text (buffer-substring first-quote (point-max))))
+    (delete-region first-quote (point-max))
+    (goto-char (point-min))
+    ;; insert quoted body at the beginning of the buffer
+    ;; (without messing with the kill-ring and thus the system clipboard)
+    (insert "\n\n" quoted-text))
+  ;; note: if you would like to edit the message in Evil insert mode, do
+  ;; (add-to-list 'evil-insert-state-modes 'post-mode)
+  ;; in your Evil customization
+  )
  
 (add-hook 'post-mode-hook
           #'(lambda()
