@@ -24,6 +24,7 @@
                 git-commit-mode
                 log-edit-mode
                 vc-git-log-edit-mode
+                post-mode
                 ))
   (add-to-list 'evil-insert-state-modes mode))
 (dolist (mode '(
