@@ -61,7 +61,7 @@
 ;; Evil
 (load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil.el"))
-(load-file (expand-file-name "~/.emacs.d/init/evil-leader.el"))
+(load-file (expand-file-name "~/.emacs.d/init/general.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-exchange.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-matchit.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-numbers.el"))
@@ -253,7 +253,7 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(2048-game academic-phrases ag ahk-mode auctex avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emacsql-libsqlite3 emacsql-sqlite3 emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close german-holidays git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections jq-mode json-mode langtool magit magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-clock-convenience org-recent-headings org-roam org2blog orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix rnc-mode sbt-mode scala-mode scratch sparql-mode tablist use-package which-key winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
+   '(general org-clock-convenience org-outlook adoc-mode org2blog undo-tree which-key german-holidays emacsql-libsqlite3 sbt-mode scala-mode scratch emacsql-sqlite3 jq-mode org-roam 2048-game academic-phrases ag ahk-mode avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-recent-headings orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
