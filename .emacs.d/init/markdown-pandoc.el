@@ -1,4 +1,7 @@
 ;; Markdown and Pandoc
+(use-package markdown-mode
+  :ensure t)
+
 (autoload 'markdown-mode "markdown-mode.el"
   "Major mode for editing Markdown files" t)
 (autoload 'pandoc-mode "pandoc-mode" "" t)
