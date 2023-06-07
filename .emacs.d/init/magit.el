@@ -3,12 +3,14 @@
 ;;   '(progn
 ;;      (defun magit-highlight-section ())))
 
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-x M-g" . magit-dispatch)))
+
 (setq magit-diff-refine-hunk (quote all))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
-
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch)
 
 (cond
  ((eq system-type 'windows-nt)
