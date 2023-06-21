@@ -239,6 +239,8 @@
  '(case-fold-search t)
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
+ '(custom-safe-themes
+   '("01341b5505005d16f65166fecb598d12184e3a82ce4ff0ecb619e271b571a158" default))
  '(delete-selection-mode nil)
  '(fringe-mode 0 nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
@@ -309,6 +311,7 @@
  '(fixed-pitch ((t (:family "Iosevka Term"))))
  '(hl-line ((t (:background "#F1DD9B"))))
  '(org-hide ((t (:foreground "wheat")))))
+
 (put 'scroll-left 'disabled nil)
 
 (load-file (expand-file-name "~/.emacs.d/init/open-my-files.el"))
