@@ -1,5 +1,7 @@
 ;; Package manager
 (require 'package)
+(require 'use-package)
+(use-package quelpa-use-package :ensure t)
 
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)

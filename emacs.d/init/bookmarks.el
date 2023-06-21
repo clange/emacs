@@ -1,6 +1,3 @@
-; TODO initialize quelpa like
-; https://github.com/quelpa/quelpa-use-package
-; https://github.com/quelpa/quelpa
 (use-package bookmark+
   :quelpa (bookmark+ :fetcher wiki
                      :files
