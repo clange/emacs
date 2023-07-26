@@ -188,6 +188,12 @@ gnore non Org buffers."
                            (min (1+ (match-end 0)) end)))
                   (unless (bolp) (insert "\n"))))))))))))
 
+(use-package org-contrib
+  :ensure t
+  :config
+  (require 'ox-extra)
+  (ox-extras-activate '(ignore-headlines)))
+
 (setq org-agenda-files (list my-org-default-file my-org-contacts-file))
 (setq org-agenda-sticky t)
 (setq org-capture-templates
