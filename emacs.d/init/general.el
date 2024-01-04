@@ -11,9 +11,9 @@
 (my-leader-def
  :keymaps 'normal
  "a" 'org-agenda
- "e" 'ido-find-file
- "b" 'ido-switch-buffer
- "k" 'helm-buffers-list
+ "e" 'helm-find-files
+ "b" 'helm-buffers-list
+ "k" 'kill-buffer
  "s" 'save-buffer
  "v" 'vc-prefix-map
  "w" 'winum-base-map
