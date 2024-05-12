@@ -14,7 +14,7 @@
  "e" 'helm-find-files
  "b" 'helm-buffers-list
  "k" 'kill-buffer
- "s" 'save-buffer
+ "s" 'save-some-buffers
  "v" 'vc-prefix-map
  "w" 'winum-base-map
  "+" 'evil-numbers/inc-at-pt
