@@ -1,11 +1,11 @@
 ;; org-roam
 (use-package org-roam
-  :ensure t
+  :ensure (t org-roam-protocol)
   :after org
   :init (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory (file-truename "~/git/lange-bever.de/clange/org/roam"))
-  (org-roam-database-connector 'libsqlite3)
+  (org-roam-database-connector 'sqlite-builtin)
   :config
   (org-roam-db-autosync-mode)
   :bind (("C-c n f" . org-roam-node-find)
