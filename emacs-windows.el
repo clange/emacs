@@ -110,6 +110,7 @@
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-contacts.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-recent-headings.el"))
+(load-file (expand-file-name "~/.emacs.d/init/org-protocol.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-roam.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
@@ -234,7 +235,7 @@
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
  '(blink-cursor-mode nil)
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "c:/Users/langebev/.emacs.d/bookmarks")
  '(browse-url-mailto-function nil)
  '(case-fold-search t)
  '(column-number-mode t)
@@ -245,8 +246,7 @@
  '(fringe-mode 0 nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
  '(kill-whole-line t)
- '(longlines-show-effect #("¶
-    " 0 2 (face escape-glyph)))
+ '(longlines-show-effect #("Â¶\12    " 0 2 (face escape-glyph)))
  '(longlines-show-hard-newlines t)
  '(longlines-wrap-follows-window-size t)
  '(mark-even-if-inactive t)
@@ -257,7 +257,7 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(transient markdown general org-clock-convenience org-outlook adoc-mode org2blog undo-tree which-key german-holidays emacsql-libsqlite3 sbt-mode scala-mode scratch emacsql-sqlite3 jq-mode org-roam 2048-game academic-phrases ag ahk-mode avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-recent-headings orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
+   '(emacsql ttl-mode gnu-elpa-keyring-update magit org-contrib transient markdown general org-clock-convenience org-outlook adoc-mode org2blog undo-tree which-key german-holidays emacsql-libsqlite3 sbt-mode scala-mode scratch emacsql-sqlite3 jq-mode org-roam 2048-game academic-phrases ag ahk-mode avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-recent-headings orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
@@ -273,7 +273,7 @@
      (org-export-babel-evaluate quote inline-only)
      (time-stamp-active . t)
      (TeX-master . wd-check)
-     (TeX-master . wd-check\.tex)
+     (TeX-master . wd-check.tex)
      (nxml-child-indent . 2)
      (org-time-clocksum-format :hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)
      (org-time-clocksum-format :days "%dd " :hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)
@@ -307,8 +307,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 108 :width normal :foundry "outline" :family "Iosevka Term"))))
- '(fixed-pitch ((t (:family "Iosevka Term"))))
+ '(default ((t (:inherit nil :stipple nil :background "Wheat" :foreground "NavyBlue" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 108 :width normal :foundry "outline" :family "IosevkaTerm NF"))))
+ '(fixed-pitch ((t (:family "IosevkaTerm NF"))))
  '(hl-line ((t (:background "#F1DD9B"))))
  '(org-hide ((t (:foreground "wheat")))))
 
