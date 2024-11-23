@@ -1,5 +1,8 @@
 ;; General
-(fset 'yes-or-no-p 'y-or-n-p)
+
+; deprecated: (fset 'yes-or-no-p 'y-or-n-p) instead see following line
+(setq use-short-answers t)
+
 (setq-default indent-tabs-mode nil)
 (minibuffer-electric-default-mode 1)
 
