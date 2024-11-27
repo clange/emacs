@@ -8,7 +8,7 @@
   (org-roam-database-connector 'sqlite-builtin)
   (org-roam-node-display-template
    (concat "${title:*} "
-           (propertize "${tags:10}" 'face 'org-tag)))
+           (propertize "${tags:20}" 'face 'org-tag)))
   :config
   (org-roam-db-autosync-mode)
   :bind (("C-c n f" . org-roam-node-find)
