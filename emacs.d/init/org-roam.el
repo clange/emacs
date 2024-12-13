@@ -1,7 +1,8 @@
 ;; org-roam
+(use-package org-roam-protocol)
 (use-package org-roam
-  :ensure (t org-roam-protocol)
-  :after org
+  :ensure t
+  :after (org org-roam-protocol)
   :init (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory (file-truename "~/git/lange-bever.de/clange/org/roam"))
