@@ -74,7 +74,8 @@
 (load-file (expand-file-name "~/.emacs.d/init/exato.el"))
 
 ;; Numbers
-(load-file (expand-file-name "~/.emacs.d/init/operate-on-number.el"))
+; disabled for 30.1					;
+; (load-file (expand-file-name "~/.emacs.d/init/operate-on-number.el"))
 
 (load-file (expand-file-name "~/.emacs.d/init/general-close.el"))
 
@@ -112,6 +113,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/org-recent-headings.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-protocol.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-roam.el"))
+(load-file (expand-file-name "~/.emacs.d/init/org-ref.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgtbl-aggregate.el"))
@@ -163,7 +165,8 @@
 
 ;; Character input
 (load-file (expand-file-name "~/.emacs.d/init/charmap.el"))
-(load-file (expand-file-name "~/.emacs.d/init/agda-input.el"))
+; disabled for 30.1					;
+; (load-file (expand-file-name "~/.emacs.d/init/agda-input.el"))
 
 ;; Software project management
 (load-file (expand-file-name "~/.emacs.d/init/magit.el"))
@@ -196,7 +199,9 @@
 (load-file (expand-file-name "~/.emacs.d/init/edit-misc.el"))
 
 ;; Keys
-(load-file (expand-file-name "~/.emacs.d/init/which-key.el"))
+
+;; no longer necessary in 30.1?
+;; (load-file (expand-file-name "~/.emacs.d/init/which-key.el"))
 (load-file (expand-file-name "~/.emacs.d/init/special-keys.el"))
 
 ;; Completion
@@ -235,7 +240,7 @@
  ;; If there is more than one, they won't work right.
  '(abbrev-mode t t)
  '(blink-cursor-mode nil)
- '(bmkp-last-as-first-bookmark-file "c:/Users/langebev/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(browse-url-mailto-function nil)
  '(case-fold-search t)
  '(column-number-mode t)
@@ -257,7 +262,7 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(helm-roam emacsql ttl-mode gnu-elpa-keyring-update magit org-contrib transient markdown general org-clock-convenience org-outlook adoc-mode org2blog undo-tree which-key german-holidays emacsql-libsqlite3 sbt-mode scala-mode scratch emacsql-sqlite3 jq-mode org-roam 2048-game academic-phrases ag ahk-mode avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-recent-headings orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
+   '(koopa-mode org-ref helm-roam emacsql ttl-mode gnu-elpa-keyring-update magit org-contrib transient markdown general org-clock-convenience org-outlook adoc-mode org2blog undo-tree which-key german-holidays emacsql-libsqlite3 sbt-mode scala-mode scratch emacsql-sqlite3 jq-mode org-roam 2048-game academic-phrases ag ahk-mode avy bookmark+ charmap company-auctex company-math company-ngram company-statistics company-web csv-mode cygwin-mount dash-functional diminish discover ebib elmacro emmet-mode evil evil-exchange evil-leader evil-matchit evil-numbers evil-org evil-quickscope evil-surround exato general-close git-timemachine google-this helm helm-ag helm-bibtex helm-org helm-org-rifle helm-projectile htmlize hydra hyperbole image+ inflections json-mode langtool magit-svn markdown-mode mediawiki n3-mode omn-mode operate-on-number org org-cliplink org-recent-headings orgalist orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools peep-dired powershell projectile psvn rdf-prefix sparql-mode tablist use-package winum writegood-mode x-path-walker xquery-mode yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
