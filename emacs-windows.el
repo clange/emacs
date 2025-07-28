@@ -184,6 +184,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/langtool.el"))
 (load-file (expand-file-name "~/.emacs.d/init/inflections.el"))
 (load-file (expand-file-name "~/.emacs.d/init/style-check.el"))
+(load-file (expand-file-name "~/.emacs.d/init/gt.el"))
 
 ;; Fonts
 (load-file (expand-file-name "~/.emacs.d/init/font-lock.el"))
