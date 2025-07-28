@@ -126,6 +126,7 @@
  
 (add-hook 'post-mode-hook
           #'(lambda()
+            (turn-on-font-lock)
             (orgalist-mode)
             (turn-on-orgtbl)
             (make-local-variable 'sentence-end-double-space)
