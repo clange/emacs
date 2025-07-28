@@ -166,8 +166,7 @@
 
 ;; Character input
 (load-file (expand-file-name "~/.emacs.d/init/charmap.el"))
-; disabled for 30.1					;
-; (load-file (expand-file-name "~/.emacs.d/init/agda-input.el"))
+(load-file (expand-file-name "~/.emacs.d/init/agda-input.el"))
 
 ;; Software project management
 (load-file (expand-file-name "~/.emacs.d/init/magit.el"))
