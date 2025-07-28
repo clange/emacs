@@ -112,6 +112,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/org-jump.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-recent-headings.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-protocol.el"))
+(load-file (expand-file-name "~/.emacs.d/init/org-ql.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-roam.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org-ref.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-secretary.el"))
