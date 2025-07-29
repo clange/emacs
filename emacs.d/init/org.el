@@ -87,10 +87,11 @@
          ((org-agenda-span 'month))
          ("~/owncloud/uni-bonn.sciebo.de/sync/agenda.html")))
 
-(defun org-class-not-this-week ()
+(defun org-recurring-skip-instance ()
   "Skip a recurring event once.
 If the agenda item at point was created by an `org-class' entry,
-change that entry to add a SKIP-WEEK argument for the selected week."
+change that entry to add a SKIP-WEEK argument for the week selected in the agenda.
+If a diary expression was used, exclude the day selected in the agenda."
   (interactive)
   ;; code taken from org-agenda-switch-to in org-agenda.el
   (if (and org-return-follows-link
@@ -112,12 +113,29 @@ change that entry to add a SKIP-WEEK argument for the selected week."
         (save-restriction
           (back-to-indentation)
           ;; the .* before org-class allows for combining `org-class' with, e.g., `and'
-          (if (re-search-forward "<%%.*(org-class \\([0-9]\\{4\\} [0-9]\\{2\\} [0-9]\\{2\\} \\)\\{2\\}[0-6]\\( \\([0-9]\\{1,2\\}\\|'holidays\\|\"[^\"]*\"\\)\\)*)" (line-end-position) t)
-            (progn
-              (backward-char)
-              (insert ? )
-              (insert (number-to-string (org-days-to-iso-week day))))
-            (user-error "No valid org-class entry found")))))))
+          (cond ((re-search-forward "<%%.*(org-class \\(?:[0-9]\\{4\\} [0-9]\\{2\\} [0-9]\\{2\\} \\)\\{2\\}[0-6]\\(?: \\(?:[0-9]\\{1,2\\}\\|'holidays\\|\"[^\"]*\"\\)\\)*)" (line-end-position) t)
+                 (backward-char)
+                 (insert ? )
+                 (insert (number-to-string (org-days-to-iso-week day))))
+                ((or (re-search-forward "<%%.*\\((and \\)(diary-.*)\\( (not (or (diary-date .*))))\\)>" (line-end-position) t)
+                     (re-search-forward "<%%.*\\((and \\)(diary-.*))>" (line-end-position) t)
+                     (re-search-forward "<%%.*(diary-.*)>" (line-end-position) t))
+                 (let* ((gregorian-day (calendar-gregorian-from-absolute day))
+                        (diary-date-string (apply 'format "(diary-date %d %02d %02d)"
+                                                  (list (calendar-extract-year gregorian-day) (calendar-extract-month gregorian-day) (calendar-extract-day gregorian-day)))))
+                   ;; insert today's date at cursor position designated by <>
+                   (cond ((match-string 2) ;; (and (diary-.*) (not (or (diary-date .*) <>)))
+                          (goto-char (- (match-end 2) 3))
+                          (insert " " diary-date-string))
+                         ((match-string 1) ;; (and (diary-.*)
+                          (goto-char (- (match-end 0) 2))
+                          (insert " (not (or " diary-date-string "))"))
+                         (t
+                          (goto-char (+ (match-beginning 0) 3))
+                          (insert "(and ")
+                          (goto-char (- (+ (match-end 0) 5) 1))
+                          (insert " (not (or " diary-date-string ")))")))))
+                 (t (user-error "No valid org-class entry found"))))))))
 
 ;; http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/
 (defun org-mode-reftex-setup ()
