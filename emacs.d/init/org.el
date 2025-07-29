@@ -93,7 +93,7 @@ If the agenda item at point was created by an `org-class' entry,
 change that entry to add a SKIP-WEEK argument for the week selected in the agenda.
 If a diary expression was used, exclude the day selected in the agenda."
   (interactive)
-  ;; code taken from org-agenda-switch-to in org-agenda.el
+  ;; code taken from org-agenda-switch-to in org-agenda.el (version shipped with Emacs 30.1)
   (if (and org-return-follows-link
 	   (not (org-get-at-bol 'org-marker))
 	   (org-in-regexp org-link-bracket-re))
@@ -102,7 +102,7 @@ If a diary expression was used, exclude the day selected in the agenda."
 		       (org-agenda-error)))
 	   (buffer (marker-buffer marker))
 	   (pos (marker-position marker))
-           ;; code taken from org-agenda-goto-calendar in org-agenda.el
+           ;; code taken from org-agenda-goto-calendar in org-agenda.el (version shipped with Emacs 30.1)
            (day (or (get-text-property (min (1- (point-max)) (point)) 'day)
 		     (user-error "Don't know which date to open in calendar"))))
       (unless buffer (user-error "Trying to switch to non-existent buffer"))
