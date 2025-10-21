@@ -139,10 +139,6 @@
 (load-file (expand-file-name "~/.emacs.d/init/synctex.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/stex.el"))
 
-;; (load-file (expand-file-name "~/.emacs.d/init/nomdoc.el"))
-
-;; (load-file (expand-file-name "~/.emacs.d/init/prolog.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/markdown-pandoc.el"))
 
 ;; Semantic Web
@@ -152,15 +148,20 @@
 
 (load-file (expand-file-name "~/.emacs.d/init/user.el"))
 
+;; Internet
 (load-file (expand-file-name "~/.emacs.d/init/post.el"))
-
 (load-file (expand-file-name "~/.emacs.d/init/google-this.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/toolbox.el"))
 
+;; Formal Logic
 ;; (load-file (expand-file-name "~/.emacs.d/init/hets.el"))
-
 ;; (load-file (expand-file-name "~/.emacs.d/init/mizar.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/nomdoc.el"))
+
+;; Programming
+(load-file (expand-file-name "~/.emacs.d/init/prolog.el"))
+(load-file (expand-file-name "~/.emacs.d/init/powershell.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/ensime.el"))
 
@@ -177,7 +178,7 @@
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/mediawiki.el"))
 
-;; Writing
+;; Writing / Natural Language
 (load-file (expand-file-name "~/.emacs.d/init/ispell.el"))
 (load-file (expand-file-name "~/.emacs.d/init/writegood.el"))
 (load-file (expand-file-name "~/.emacs.d/init/langtool.el"))
@@ -200,7 +201,6 @@
 (load-file (expand-file-name "~/.emacs.d/init/edit-misc.el"))
 
 ;; Keys
-
 (load-file (expand-file-name "~/.emacs.d/init/which-key.el"))
 (load-file (expand-file-name "~/.emacs.d/init/special-keys.el"))
 
@@ -264,28 +264,28 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(koopa-mode org-ref helm-roam emacsql ttl-mode
-                gnu-elpa-keyring-update magit org-contrib transient
-                markdown general org-clock-convenience org-outlook
-                adoc-mode org2blog undo-tree which-key german-holidays
-                emacsql-libsqlite3 sbt-mode scala-mode scratch
-                emacsql-sqlite3 jq-mode org-roam 2048-game
-                academic-phrases ag ahk-mode avy bookmark+ charmap
-                company-auctex company-math company-ngram
-                company-statistics company-web csv-mode cygwin-mount
-                dash-functional diminish discover ebib elmacro
-                emmet-mode evil evil-exchange evil-leader evil-matchit
-                evil-numbers evil-org evil-quickscope evil-surround
-                exato general-close git-timemachine google-this helm
-                helm-ag helm-bibtex helm-org helm-org-rifle
-                helm-projectile htmlize hydra hyperbole image+
-                inflections json-mode langtool magit-svn markdown-mode
-                mediawiki n3-mode omn-mode operate-on-number org
-                org-cliplink org-recent-headings orgalist orgnav
-                orgtbl-aggregate pandoc pandoc-mode pdf-tools
-                peep-dired powershell projectile psvn rdf-prefix
-                sparql-mode tablist use-package winum writegood-mode
-                x-path-walker xquery-mode yaml-mode yankpad yasnippet))
+   '(2048-game academic-phrases adoc-mode ag ahk-mode avy bookmark+
+               charmap company-auctex company-math company-ngram
+               company-statistics company-web csv-mode cygwin-mount
+               dash-functional diminish discover ebib elmacro emacsql
+               emacsql-libsqlite3 emacsql-sqlite3 emmet-mode evil
+               evil-exchange evil-leader evil-matchit evil-numbers
+               evil-org evil-quickscope evil-surround exato general
+               general-close german-holidays git-timemachine
+               gnu-elpa-keyring-update google-this gt helm helm-ag
+               helm-bibtex helm-org helm-org-ql helm-org-rifle
+               helm-projectile helm-roam htmlize hydra hyperbole
+               image+ inflections jq-mode json-mode koopa-mode
+               langtool magit magit-svn markdown markdown-mode
+               mediawiki n3-mode omn-mode operate-on-number org
+               org-cliplink org-clock-convenience org-contrib
+               org-outlook org-ql org-recent-headings org-ref org-roam
+               org2blog orgalist orgnav orgtbl-aggregate pandoc
+               pandoc-mode pdf-tools peep-dired powershell projectile
+               psvn rdf-prefix sbt-mode scala-mode scratch sparql-mode
+               tablist transient ttl-mode undo-tree use-package
+               which-key winum writegood-mode x-path-walker
+               xquery-mode yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
