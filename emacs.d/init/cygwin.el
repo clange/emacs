@@ -2,9 +2,9 @@
 ;; https://www.emacswiki.org/emacs/setup-cygwin.el
 (cond
  ((eq system-type 'windows-nt)
+  (setq cygwin-root-directory (expand-file-name "~/scoop/persist/cygwin/root"))
   (require 'setup-cygwin)
-  
-  (setenv "PATH" (concat cygwin-root-directory "\\bin;" (getenv "PATH")))
+
   (setenv "TMPDIR" (getenv "TEMP"))
 
   (require 'fakecygpty)
