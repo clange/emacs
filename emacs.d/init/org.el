@@ -146,7 +146,11 @@ If a diary expression was used, exclude the day selected in the agenda."
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
   )
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
-  
+
+(use-package adaptive-wrap
+  :ensure t)
+(add-hook 'org-mode-hook 'adaptive-wrap-prefix-mode)
+
 ;; distinguish TODO keywords by color:
 (setq org-todo-keyword-faces
       '(("TODO" . (:foreground "DarkOrange1" :weight bold))
