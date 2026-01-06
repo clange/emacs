@@ -59,4 +59,4 @@
 
 (setq evil-echo-state t)
 (setq evil-search-module 'evil-search)
-(evil-set-undo-system 'undo-tree)
+(evil-set-undo-system 'undo-fu)

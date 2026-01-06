@@ -61,7 +61,9 @@
 ;; (load-file (expand-file-name "~/.emacs.d/init/hyperbole.el"))
 
 ;; Evil
-(load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
+; (load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
+(load-file (expand-file-name "~/.emacs.d/init/undo-fu.el"))
+(load-file (expand-file-name "~/.emacs.d/init/vundo.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil.el"))
 (load-file (expand-file-name "~/.emacs.d/init/general.el"))
 (load-file (expand-file-name "~/.emacs.d/init/evil-exchange.el"))
