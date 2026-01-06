@@ -14,4 +14,4 @@
 
 (cond
  ((eq system-type 'windows-nt)
-  (setq magit-git-executable "C:\\Users\\langebev\\scoop\\shims\\git.exe")))
+  (setq magit-git-executable (expand-file-name "~/scoop/shims/git.exe"))))
