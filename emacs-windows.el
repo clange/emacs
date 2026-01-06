@@ -164,6 +164,7 @@
 ;; Programming
 (load-file (expand-file-name "~/.emacs.d/init/prolog.el"))
 (load-file (expand-file-name "~/.emacs.d/init/powershell.el"))
+(load-file (expand-file-name "~/.emacs.d/init/mermaid.el"))
 
 ;; (load-file (expand-file-name "~/.emacs.d/init/ensime.el"))
 
@@ -266,28 +267,29 @@
  '(org-file-apps '((auto-mode . emacs) ("\\.mm\\'" . default)))
  '(org-latex-pdf-process '("latexmk -g -pdf %f"))
  '(package-selected-packages
-   '(2048-game academic-phrases adoc-mode ag ahk-mode avy bookmark+
-               charmap company-auctex company-math company-ngram
-               company-statistics company-web csv-mode cygwin-mount
-               dash-functional diminish discover ebib elmacro emacsql
-               emacsql-libsqlite3 emacsql-sqlite3 emmet-mode evil
-               evil-exchange evil-leader evil-matchit evil-numbers
-               evil-org evil-quickscope evil-surround exato general
-               general-close german-holidays git-timemachine
-               gnu-elpa-keyring-update google-this gt helm helm-ag
-               helm-bibtex helm-org helm-org-ql helm-org-rifle
-               helm-projectile helm-roam htmlize hydra hyperbole
-               image+ inflections jq-mode json-mode koopa-mode
-               langtool magit magit-svn markdown markdown-mode
-               mediawiki n3-mode omn-mode operate-on-number org
-               org-cliplink org-clock-convenience org-contrib
-               org-outlook org-ql org-recent-headings org-ref org-roam
-               org2blog orgalist orgnav orgtbl-aggregate pandoc
-               pandoc-mode pdf-tools peep-dired powershell projectile
-               psvn rdf-prefix sbt-mode scala-mode scratch sparql-mode
-               tablist transient ttl-mode undo-tree use-package
-               which-key winum writegood-mode x-path-walker
-               xquery-mode yaml-mode yankpad yasnippet))
+   '(2048-game academic-phrases adaptive-wrap adoc-mode ag ahk-mode avy
+               bookmark+ charmap company-auctex company-math
+               company-ngram company-statistics company-web csv-mode
+               cygwin-mount dash-functional diminish discover ebib
+               elmacro emacsql emacsql-libsqlite3 emacsql-sqlite3
+               emmet-mode evil evil-exchange evil-leader evil-matchit
+               evil-numbers evil-org evil-quickscope evil-surround
+               exato general general-close german-holidays
+               git-timemachine gnu-elpa-keyring-update google-this gt
+               helm helm-ag helm-bibtex helm-org helm-org-ql
+               helm-org-rifle helm-projectile helm-roam htmlize hydra
+               hyperbole image+ inflections jq-mode json-mode
+               koopa-mode langtool magit magit-svn markdown
+               markdown-mode mediawiki mermaid-mode n3-mode omn-mode
+               operate-on-number org org-cliplink
+               org-clock-convenience org-contrib org-outlook org-ql
+               org-recent-headings org-ref org-roam org2blog orgalist
+               orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools
+               peep-dired powershell projectile psvn rdf-prefix
+               sbt-mode scala-mode scratch sparql-mode tablist
+               transient ttl-mode undo-fu undo-fu-session undo-tree
+               use-package vundo which-key winum writegood-mode
+               x-path-walker xquery-mode yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
