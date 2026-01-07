@@ -3,6 +3,11 @@
 (require 'use-package)
 (use-package quelpa-use-package :ensure t)
 
+; fix path for Cygwin GPG by rewriting from Windows to Unix pathname
+(cond
+ ((eq system-type 'windows-nt)
+  (setq package-gnupghome-dir (replace-regexp-in-string "\r?\n$" "" (shell-command-to-string (format "cygpath %s" (shell-quote-argument package-gnupghome-dir))))))
+
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
