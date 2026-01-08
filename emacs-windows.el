@@ -176,6 +176,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/magit.el"))
 ; (load-file (expand-file-name "~/.emacs.d/init/magit-svn.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/magit-fix-diff-color.el"))
+(load-file (expand-file-name "~/.emacs.d/init/forge.el"))
 (load-file (expand-file-name "~/.emacs.d/init/git.el"))
 (load-file (expand-file-name "~/.emacs.d/init/projectile.el"))
 
@@ -274,7 +275,7 @@
                elmacro emacsql emacsql-libsqlite3 emacsql-sqlite3
                emmet-mode evil evil-exchange evil-leader evil-matchit
                evil-numbers evil-org evil-quickscope evil-surround
-               exato general general-close german-holidays
+               exato forge general general-close german-holidays
                git-timemachine gnu-elpa-keyring-update google-this gt
                helm helm-ag helm-bibtex helm-org helm-org-ql
                helm-org-rifle helm-projectile helm-roam htmlize hydra
