@@ -121,6 +121,7 @@
 (load-file (expand-file-name "~/.emacs.d/init/orgnav.el"))
 (load-file (expand-file-name "~/.emacs.d/init/orgtbl-aggregate.el"))
 (load-file (expand-file-name "~/.emacs.d/init/org2blog.el"))
+(load-file (expand-file-name "~/.emacs.d/init/worf.el"))
 ;; (load-file (expand-file-name "~/.emacs.d/init/org-other.el"))
 
 ;; Hydra
@@ -278,19 +279,20 @@
                exato forge general general-close german-holidays
                git-timemachine gnu-elpa-keyring-update google-this gt
                helm helm-ag helm-bibtex helm-org helm-org-ql
-               helm-org-rifle helm-projectile helm-roam htmlize hydra
-               hyperbole image+ inflections jq-mode json-mode
-               koopa-mode langtool magit magit-svn markdown
+               helm-org-rifle helm-projectile helm-roam helm-tramp
+               htmlize hydra hyperbole image+ inflections jq-mode
+               json-mode koopa-mode langtool magit magit-svn markdown
                markdown-mode mediawiki mermaid-mode n3-mode omn-mode
                operate-on-number org org-cliplink
                org-clock-convenience org-contrib org-outlook org-ql
                org-recent-headings org-ref org-roam org2blog orgalist
-               orgnav orgtbl-aggregate pandoc pandoc-mode pdf-tools
-               peep-dired powershell projectile psvn rdf-prefix
-               sbt-mode scala-mode scratch sparql-mode tablist
-               transient ttl-mode undo-fu undo-fu-session undo-tree
-               use-package vundo which-key winum writegood-mode
-               x-path-walker xquery-mode yaml-mode yankpad yasnippet))
+               orgit-forge orgnav orgtbl-aggregate pandoc pandoc-mode
+               pdf-tools peep-dired powershell projectile psvn
+               quelpa-use-package rdf-prefix sbt-mode scala-mode
+               scratch sparql-mode tablist transient ttl-mode undo-fu
+               undo-fu-session undo-tree use-package vundo which-key
+               winum worf writegood-mode x-path-walker xquery-mode
+               yaml-mode yankpad yasnippet))
  '(safe-local-variable-values
    '((org-latex-prefer-user-labels . t)
      (org-odt-preferred-output-format . docx)
