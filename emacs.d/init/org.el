@@ -33,7 +33,6 @@
 (setq org-agenda-diary-file my-org-default-file)
 (setq org-agenda-span 8)
 (setq org-agenda-start-on-weekday nil)
-(add-hook 'org-agenda-finalize-hook #'(lambda () (undo-tree-mode -1)))
 
 (require 'org-agenda)
 ;; sort TODO's in agenda and todo view by keyword/state also (requires dash.el)
