@@ -60,6 +60,9 @@
 ;; evaluate when I have more time
 ;; (load-file (expand-file-name "~/.emacs.d/init/hyperbole.el"))
 
+;; Ediff
+(load-file (expand-file-name "~/.emacs.d/init/ediff.el"))
+
 ;; Evil
 ; (load-file (expand-file-name "~/.emacs.d/init/undo-tree.el"))
 (load-file (expand-file-name "~/.emacs.d/init/undo-fu.el"))
